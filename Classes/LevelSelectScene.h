@@ -19,6 +19,7 @@ private:
     int m_level;
     void replayGame();
     void nextLevelGame();
+    CCMenuItemImage* createLevelImage(int level);
     
 protected:
     

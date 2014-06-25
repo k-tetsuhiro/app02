@@ -265,6 +265,7 @@
 		9D523A2A195838420064DC61 /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D523A09195838420064DC61 /* reload.png */; };
 		9D523A2B195838420064DC61 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D523A0A195838420064DC61 /* star.png */; };
 		9D523A2C195838420064DC61 /* touch_waku.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D523A0B195838420064DC61 /* touch_waku.png */; };
+		9D97CB24195AF037008E282A /* level_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D97CB23195AF037008E282A /* level_circle.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -798,6 +799,7 @@
 		9D523A09195838420064DC61 /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload.png; sourceTree = "<group>"; };
 		9D523A0A195838420064DC61 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		9D523A0B195838420064DC61 /* touch_waku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touch_waku.png; sourceTree = "<group>"; };
+		9D97CB23195AF037008E282A /* level_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level_circle.png; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -1800,6 +1802,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9D97CB23195AF037008E282A /* level_circle.png */,
 				9D5239EA195838420064DC61 /* 1.png */,
 				9D5239EB195838420064DC61 /* 2.png */,
 				9D5239EC195838420064DC61 /* 3.png */,
@@ -1944,6 +1947,7 @@
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				9D523A1A195838420064DC61 /* logo_clear.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
+				9D97CB24195AF037008E282A /* level_circle.png in Resources */,
 				9D523A15195838420064DC61 /* Icon-57.png in Resources */,
 				9D523A10195838420064DC61 /* button_on.png in Resources */,
 				9D523A24195838420064DC61 /* lv1_smallest_num.csv in Resources */,
