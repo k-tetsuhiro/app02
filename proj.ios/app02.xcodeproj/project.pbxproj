@@ -226,6 +226,9 @@
 		379BB9D417F03F3700829B88 /* SceneReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 379BB99317F03F3700829B88 /* SceneReader.cpp */; };
 		46513EB1187BFBA200B5ABE1 /* UITouchGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46513EAF187BFBA200B5ABE1 /* UITouchGroup.cpp */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
+		9D49C1FC196C13A60069B963 /* lv15_direction.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9D49C1F9196C13A60069B963 /* lv15_direction.csv */; };
+		9D49C1FD196C13A60069B963 /* lv15_front.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9D49C1FA196C13A60069B963 /* lv15_front.csv */; };
+		9D49C1FE196C13A60069B963 /* lv15_smallest_num.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9D49C1FB196C13A60069B963 /* lv15_smallest_num.csv */; };
 		9D5239E3195837E10064DC61 /* Arrow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D5239D5195837E10064DC61 /* Arrow.cpp */; };
 		9D5239E4195837E10064DC61 /* ConstCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D5239D7195837E10064DC61 /* ConstCommon.cpp */; };
 		9D5239E5195837E10064DC61 /* LevelSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D5239D9195837E10064DC61 /* LevelSelectScene.cpp */; };
@@ -753,6 +756,9 @@
 		46513EAF187BFBA200B5ABE1 /* UITouchGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UITouchGroup.cpp; sourceTree = "<group>"; };
 		46513EB0187BFBA200B5ABE1 /* UITouchGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITouchGroup.h; sourceTree = "<group>"; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
+		9D49C1F9196C13A60069B963 /* lv15_direction.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lv15_direction.csv; sourceTree = "<group>"; };
+		9D49C1FA196C13A60069B963 /* lv15_front.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lv15_front.csv; sourceTree = "<group>"; };
+		9D49C1FB196C13A60069B963 /* lv15_smallest_num.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lv15_smallest_num.csv; sourceTree = "<group>"; };
 		9D5239D5195837E10064DC61 /* Arrow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Arrow.cpp; sourceTree = "<group>"; };
 		9D5239D6195837E10064DC61 /* Arrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arrow.h; sourceTree = "<group>"; };
 		9D5239D7195837E10064DC61 /* ConstCommon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConstCommon.cpp; sourceTree = "<group>"; };
@@ -1802,6 +1808,9 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9D49C1F9196C13A60069B963 /* lv15_direction.csv */,
+				9D49C1FA196C13A60069B963 /* lv15_front.csv */,
+				9D49C1FB196C13A60069B963 /* lv15_smallest_num.csv */,
 				9D97CB23195AF037008E282A /* level_circle.png */,
 				9D5239EA195838420064DC61 /* 1.png */,
 				9D5239EB195838420064DC61 /* 2.png */,
@@ -1939,8 +1948,10 @@
 				9D523A14195838420064DC61 /* Marker Felt.ttf in Resources */,
 				9D523A25195838420064DC61 /* lv2_direction.csv in Resources */,
 				9D523A21195838420064DC61 /* logo_W.png in Resources */,
+				9D49C1FE196C13A60069B963 /* lv15_smallest_num.csv in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				9D523A19195838420064DC61 /* logo_A.png in Resources */,
+				9D49C1FD196C13A60069B963 /* lv15_front.csv in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
 				9D523A0E195838420064DC61 /* 3.png in Resources */,
@@ -1954,6 +1965,7 @@
 				9D523A1E195838420064DC61 /* logo_R.png in Resources */,
 				9D523A1C195838420064DC61 /* logo_menu.png in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
+				9D49C1FC196C13A60069B963 /* lv15_direction.csv in Resources */,
 				9D523A26195838420064DC61 /* lv2_front.csv in Resources */,
 				9D523A0F195838420064DC61 /* button_off.png in Resources */,
 				9D523A23195838420064DC61 /* lv1_front.csv in Resources */,
