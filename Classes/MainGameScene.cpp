@@ -77,7 +77,7 @@ bool MainGameScene::initWithLevel(int level)
     }
     
     //初期化に関するものを書く
-     m_level = level;
+    m_level = level;
     
     totalGameCount = 0;
     
@@ -150,7 +150,6 @@ void MainGameScene::makeArrows()
     int *arrowFront = Util::makeArrayDataByCsv(ss.str()+"front.csv");
     int *arrowSmallestNum = Util::makeArrayDataByCsv(ss.str()+"smallest_num.csv");
     minimamCount = *arrowSmallestNum;
-    CCLOG("min:%d",minimamCount);
     
     
     
@@ -556,7 +555,7 @@ void MainGameScene::makeResumeDaialog()
     returnGameItem->setPosition(ccp(winSize.width * 0.7, winSize.height * 0.45));
     
     CCLabelTTF* returnGameLabel;
-    returnGameLabel = CCLabelTTF::create("BACK", "Arial", 30.0);
+    returnGameLabel = CCLabelTTF::create("CANCLE", "Arial", 30.0);
     
     CCSize pReturnGameSize = returnGameItem->getContentSize();
     returnGameLabel->setPosition(ccp(pReturnGameSize.width / 2 ,pReturnGameSize.height / 2));

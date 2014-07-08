@@ -12,18 +12,23 @@
 #include "cocos2d.h"
 
 USING_NS_CC;
+using namespace std;
 
 class LevelSelectScene : public cocos2d::CCLayerColor
 {
 private:
+    string highScoreKey;
     int m_level;
     void replayGame();
     void nextLevelGame();
+    void startGame();
+    void hiddenStartMenu();
     CCMenuItemImage* createLevelImage(int level);
     
 protected:
     
 public:
+    const static int tagStartMenuDialog = 100;
     virtual bool init();
     static cocos2d::CCScene* scene();
     CREATE_FUNC(LevelSelectScene);
