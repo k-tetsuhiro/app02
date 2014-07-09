@@ -20,6 +20,7 @@ int* Util::makeArrayDataByCsv(string csvPath)
     
     if(!ifs){
         //TODO　エラーハンドリング
+    	CCAssert(false,"Invalid file");
     }
     
     int i = 0;

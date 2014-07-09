@@ -269,6 +269,8 @@
 		9D523A2B195838420064DC61 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D523A0A195838420064DC61 /* star.png */; };
 		9D523A2C195838420064DC61 /* touch_waku.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D523A0B195838420064DC61 /* touch_waku.png */; };
 		9D97CB24195AF037008E282A /* level_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D97CB23195AF037008E282A /* level_circle.png */; };
+		9DEA546E196D4DFA0021D950 /* GameData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA546C196D4DFA0021D950 /* GameData.cpp */; };
+		9DEA5470196D546D0021D950 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DEA546F196D546D0021D950 /* test.json */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -806,6 +808,10 @@
 		9D523A0A195838420064DC61 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		9D523A0B195838420064DC61 /* touch_waku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touch_waku.png; sourceTree = "<group>"; };
 		9D97CB23195AF037008E282A /* level_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level_circle.png; sourceTree = "<group>"; };
+		9DEA546C196D4DFA0021D950 /* GameData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameData.cpp; path = ../Classes/GameData.cpp; sourceTree = "<group>"; };
+		9DEA546D196D4DFA0021D950 /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameData.h; path = ../Classes/GameData.h; sourceTree = "<group>"; };
+		9DEA546F196D546D0021D950 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		9DEA5471196D5B260021D950 /* picojson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = picojson.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -1338,6 +1344,7 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9DEA5471196D5B260021D950 /* picojson.h */,
 				9D5239D5195837E10064DC61 /* Arrow.cpp */,
 				9D5239D6195837E10064DC61 /* Arrow.h */,
 				9D5239D7195837E10064DC61 /* ConstCommon.cpp */,
@@ -1354,6 +1361,8 @@
 				9D5239E2195837E10064DC61 /* Util.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
+				9DEA546C196D4DFA0021D950 /* GameData.cpp */,
+				9DEA546D196D4DFA0021D950 /* GameData.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -1808,6 +1817,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9DEA546F196D546D0021D950 /* test.json */,
 				9D49C1F9196C13A60069B963 /* lv15_direction.csv */,
 				9D49C1FA196C13A60069B963 /* lv15_front.csv */,
 				9D49C1FB196C13A60069B963 /* lv15_smallest_num.csv */,
@@ -1953,6 +1963,7 @@
 				9D523A19195838420064DC61 /* logo_A.png in Resources */,
 				9D49C1FD196C13A60069B963 /* lv15_front.csv in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
+				9DEA5470196D546D0021D950 /* test.json in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
 				9D523A0E195838420064DC61 /* 3.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
@@ -2162,6 +2173,7 @@
 				1AB87035175E0A84005D39BF /* WebSocket.cpp in Sources */,
 				375BD4C51868411B0024609E /* TriggerMng.cpp in Sources */,
 				1A9CE8781765A12C000E3062 /* AssetsManager.cpp in Sources */,
+				9DEA546E196D4DFA0021D950 /* GameData.cpp in Sources */,
 				379BB99A17F03F3700829B88 /* CCArmatureAnimation.cpp in Sources */,
 				379BB99B17F03F3700829B88 /* CCProcessBase.cpp in Sources */,
 				379BB99C17F03F3700829B88 /* CCTween.cpp in Sources */,

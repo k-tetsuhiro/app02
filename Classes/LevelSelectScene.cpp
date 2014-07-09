@@ -10,6 +10,7 @@
 #include "MainGameScene.h"
 #include "Util.h"
 #include "ConstCommon.h"
+#include "GameData.h"
 
 USING_NS_CC;
 
@@ -41,6 +42,10 @@ bool LevelSelectScene::init()
     CCMenu* pMenu = CCMenu::createWithArray(pLevelArr);
     pMenu->setPosition(CCPointZero);
     this->addChild(pMenu);
+    
+    GameData* gm = new GameData("test.json");
+    int test = gm->getMinScore();
+    CCLOG("min:%d",test);
     
     
     return true;
