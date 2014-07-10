@@ -8,6 +8,13 @@
 
 
 #include "ConstCommon.h"
+#include "cocos2d.h"
+USING_NS_CC;
 using namespace std;
 
-const char* ConstCommon::HIGH_SCORE_KEY = "test";
+string ConstCommon::getHighScoreKey(int level)
+{
+    //highScore:Level:m_level;
+    CCString* highScoreKey = CCString::createWithFormat("test:%d",level);
+    return highScoreKey->getCString();
+}

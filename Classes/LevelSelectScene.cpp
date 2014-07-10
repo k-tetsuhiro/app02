@@ -41,12 +41,8 @@ bool LevelSelectScene::init()
     
     CCMenu* pMenu = CCMenu::createWithArray(pLevelArr);
     pMenu->setPosition(CCPointZero);
+    pMenu->setTag(tagLevelSelectMenuDialog);
     this->addChild(pMenu);
-    
-    GameData* gm = new GameData("Lv1.json");
-    int test = gm->getMinScore();
-    CCLOG("min:%d",test);
-    
     
     return true;
     
@@ -56,6 +52,12 @@ bool LevelSelectScene::init()
 
 void LevelSelectScene::menuStartCallback(CCObject *pSender)
 {
+    
+    CCMenu* levelSelectMenu = (CCMenu*)this->getChildByTag(tagLevelSelectMenuDialog);
+    if(levelSelectMenu){
+        levelSelectMenu->setEnabled(false);
+    }
+    
     CCMenuItemImage* targetLevelImage = (CCMenuItemImage*)pSender;
     m_level = targetLevelImage->getTag();
     
@@ -82,11 +84,8 @@ void LevelSelectScene::menuStartCallback(CCObject *pSender)
     GameData* gm = new GameData(jsonFileName->getCString());
     int minScore = gm->getMinScore();
     
-    //ハイスコアを表示
-    // higscorekey:m_level
-    stringstream ss2;
-    ss2 << ":" << m_level;
-    highScoreKey = ConstCommon::HIGH_SCORE_KEY+ss2.str();
+    //ハイスコアを表示    
+    highScoreKey = ConstCommon::getHighScoreKey(m_level);
     
     CCUserDefault* userDefault = CCUserDefault::sharedUserDefault();
    
@@ -149,6 +148,11 @@ void LevelSelectScene::hiddenStartMenu()
     CCMenu* startMenu = (CCMenu*)this->getChildByTag(tagStartMenuDialog);
     if(startMenu){
         this->removeChild(startMenu);
+    }
+    
+    CCMenu* levelSelectMenu = (CCMenu*)this->getChildByTag(tagLevelSelectMenuDialog);
+    if(levelSelectMenu){
+        levelSelectMenu->setEnabled(true);
     }
     
 }

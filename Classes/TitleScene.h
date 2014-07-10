@@ -16,7 +16,6 @@ USING_NS_CC;
 class TitleScene : public cocos2d::CCLayerColor
 {
 private:
-    void showHighScoreLabel();
     
 protected:
     

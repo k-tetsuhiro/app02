@@ -162,9 +162,7 @@ void MainGameScene::makeArrows()
     
     
     // higscorekey:m_level
-    stringstream ss2;
-    ss2 << ":" << m_level;
-    highScoreKey = ConstCommon::HIGH_SCORE_KEY+ss2.str();
+    highScoreKey = ConstCommon::getHighScoreKey(m_level);
 
 
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();

@@ -29,6 +29,7 @@ protected:
     
 public:
     const static int tagStartMenuDialog = 100;
+    const static int tagLevelSelectMenuDialog = 200;
     virtual bool init();
     static cocos2d::CCScene* scene();
     CREATE_FUNC(LevelSelectScene);

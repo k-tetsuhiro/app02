@@ -124,7 +124,7 @@ bool TitleScene::init()
     this->addChild(pMenu);
     
     //showHighScore
-    showHighScoreLabel();
+    //showHighScoreLabel();
     
     return true;
     
@@ -138,13 +138,4 @@ void TitleScene::menuStartCallback(CCObject *pSender)
     CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
     CCDirector::sharedDirector()->replaceScene(tran);
 }
-
-void TitleScene::showHighScoreLabel()
-{
-    CCUserDefault* userDefault = CCUserDefault::sharedUserDefault();
-    
-    float highScore = userDefault->getFloatForKey(ConstCommon::HIGH_SCORE_KEY,99.9);
-    
-}
-
 
