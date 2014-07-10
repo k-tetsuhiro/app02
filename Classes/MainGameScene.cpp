@@ -13,6 +13,7 @@
 #include "TitleScene.h"
 #include "Util.h"
 #include "ConstCommon.h"
+#include "GameData.h"
 
 USING_NS_CC;
 using namespace std;
@@ -142,15 +143,22 @@ void MainGameScene::showBackgroud()
 void MainGameScene::makeArrows()
 {
     
+    //GameDataの読み込み
+    CCString* jsonFileName = CCString::createWithFormat("Lv%d.json",m_level);
+    GameData* gm = new GameData(jsonFileName->getCString());
+    
     //prefix Lv1_
     stringstream ss;
     ss << "lv" << m_level << "_";
     
-    int *arrowDirection = Util::makeArrayDataByCsv(ss.str()+"direction.csv");
-    int *arrowFront = Util::makeArrayDataByCsv(ss.str()+"front.csv");
-    int *arrowSmallestNum = Util::makeArrayDataByCsv(ss.str()+"smallest_num.csv");
-    minimamCount = *arrowSmallestNum;
+    //矢印の方向
+    int *arrowDirection = gm->getDirectionArray();
     
+    //矢印の方向
+    int *arrowFront = gm->getFrontArray();
+
+    //最小手数
+    minimamCount = gm->getMinScore();
     
     
     // higscorekey:m_level

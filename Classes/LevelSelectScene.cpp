@@ -43,7 +43,7 @@ bool LevelSelectScene::init()
     pMenu->setPosition(CCPointZero);
     this->addChild(pMenu);
     
-    GameData* gm = new GameData("test.json");
+    GameData* gm = new GameData("Lv1.json");
     int test = gm->getMinScore();
     CCLOG("min:%d",test);
     
@@ -68,6 +68,7 @@ void LevelSelectScene::menuStartCallback(CCObject *pSender)
     startMenuBG->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.5));
     startMenuBG->setEnabled(false);
     
+    
     CCString* levelStr = CCString::createWithFormat("Lv:%d",m_level);
     CCSize pStartBGSize = startMenuBG->getContentSize();
     CCLabelTTF* levelLabel;
@@ -76,11 +77,10 @@ void LevelSelectScene::menuStartCallback(CCObject *pSender)
     levelLabel->setPosition(ccp(pStartBGSize.width * 0.5 ,pStartBGSize.height * 0.75));
     startMenuBG->addChild(levelLabel);
     
-    stringstream ss;
-    ss << "lv" << m_level << "_";
-    
-    int *arrowSmallestNum = Util::makeArrayDataByCsv(ss.str()+"smallest_num.csv");
-    int minScore = *arrowSmallestNum;
+    //最小手数
+    CCString* jsonFileName = CCString::createWithFormat("Lv%d.json",m_level);
+    GameData* gm = new GameData(jsonFileName->getCString());
+    int minScore = gm->getMinScore();
     
     //ハイスコアを表示
     // higscorekey:m_level
