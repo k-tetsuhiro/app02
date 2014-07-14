@@ -26,12 +26,31 @@ package com.renerd.app02;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+
 import android.os.Bundle;
+import android.view.Gravity;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 public class app02 extends Cocos2dxActivity{
-	
+	private static AdView adView;
+    private final int lp = LinearLayout.LayoutParams.WRAP_CONTENT; 
+    
     protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);	
+		
+		adView = new AdView(this);
+		adView.setAdSize(AdSize.BANNER);
+		adView.setAdUnitId("ca-app-pub-6097780561233990/5949749868");
+		FrameLayout.LayoutParams adParams = new FrameLayout.LayoutParams(lp,lp);
+		adParams.gravity = (Gravity.BOTTOM|Gravity.CENTER); 
+		addContentView(adView, adParams);
+		
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
 	}
 
     public Cocos2dxGLSurfaceView onCreateView() {
