@@ -26,7 +26,7 @@ bool LevelSelectScene::init()
 {
     // 初期化色を変更
     //if (!CCLayerColor::initWithColor(ccc4(83, 166, 103, 255))) //RGBA
-    if (!CCLayerColor::initWithColor(ccc4(0xF9,0xF7,0xAF,0xFF))) //RGBA
+    if (!CCLayerColor::initWithColor(ccc4(0xF8,0xEC,0xDE,0xFF))) //RGBA
     {
         return false;
     }
@@ -55,6 +55,7 @@ void LevelSelectScene::menuStartCallback(CCObject *pSender)
     
     CCMenu* levelSelectMenu = (CCMenu*)this->getChildByTag(tagLevelSelectMenuDialog);
     if(levelSelectMenu){
+        levelSelectMenu->setOpacity(128);
         levelSelectMenu->setEnabled(false);
     }
     
@@ -65,8 +66,8 @@ void LevelSelectScene::menuStartCallback(CCObject *pSender)
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
     
     
-    CCMenuItemImage* startMenuBG = CCMenuItemImage::create("logo_Info.png","logo_Info.png");
-    startMenuBG->setScale(0.6);
+    CCMenuItemImage* startMenuBG = CCMenuItemImage::create("logo_Info2.png","logo_Info2.png");
+    startMenuBG->setScale(0.7);
     startMenuBG->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.5));
     startMenuBG->setEnabled(false);
     
@@ -152,6 +153,7 @@ void LevelSelectScene::hiddenStartMenu()
     
     CCMenu* levelSelectMenu = (CCMenu*)this->getChildByTag(tagLevelSelectMenuDialog);
     if(levelSelectMenu){
+        levelSelectMenu->setOpacity(255);
         levelSelectMenu->setEnabled(true);
     }
     
@@ -161,9 +163,12 @@ CCMenuItemImage* LevelSelectScene::createLevelImage(int level)
 {
     CCSize size = CCDirector::sharedDirector()->getWinSize();
     CCString* levelString = CCString::createWithFormat("%d",level);
+    
+    int fileNum = ((level - 1) / 3) + 1;
+    CCString* filePathName = CCString::createWithFormat("level_circle_%d.png",fileNum);
 
     CCMenuItemImage* pLevel;
-    pLevel = CCMenuItemImage::create("level_circle.png", "level_circle.png",this,menu_selector(LevelSelectScene::menuStartCallback));
+    pLevel = CCMenuItemImage::create(filePathName->getCString(), filePathName->getCString(),this,menu_selector(LevelSelectScene::menuStartCallback));
     pLevel->setScale(0.25);
     pLevel->setPosition(ccp(
                             size.width * (((((level - 1) % 3) + 1) * 0.3) - 0.1),
@@ -173,7 +178,7 @@ CCMenuItemImage* LevelSelectScene::createLevelImage(int level)
     
     CCLabelTTF* levelLabel;
     levelLabel = CCLabelTTF::create(levelString->getCString(), "Arial", 150.0);
-    levelLabel->setColor(ccc3(83, 166, 103));
+    levelLabel->setColor(ccc3(0x00,0x00,0x00));
     
     CCSize pLevelSize = pLevel->getContentSize();
     levelLabel->setPosition(ccp(pLevelSize.width / 2 ,pLevelSize.height / 2));

@@ -12,13 +12,16 @@
 #include "cocos2d.h"
 
 USING_NS_CC;
+using namespace std;
 
 class ResultScene : public cocos2d::CCLayerColor
 {
 private:
+    static int max_level;//Lv増えたら更新する
     int m_level;
     void replayGame();
     void nextLevelGame();
+    void showTitleMenu();
     
 protected:
     

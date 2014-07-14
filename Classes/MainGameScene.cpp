@@ -72,7 +72,7 @@ bool MainGameScene::initWithLevel(int level)
 {
     
     // 初期化色を変更
-    if (!CCLayerColor::initWithColor(ccc4(255, 255, 255, 255))) //RGBA
+    if (!CCLayerColor::initWithColor(ccc4(0xF1,0xF1,0xF2,0xFF))) //RGBA
     {
         return false;
     }
@@ -530,8 +530,8 @@ void MainGameScene::makeResumeDaialog()
     
     
     //CCSpriteで作ると、タッチ判定無効とかめんどくさいからBGもMenuItemで作る
-    CCMenuItemImage* resumeBG = CCMenuItemImage::create("logo_Info.png","logo_Info.png");
-    resumeBG->setScale(0.6);
+    CCMenuItemImage* resumeBG = CCMenuItemImage::create("logo_Info2.png","logo_Info2.png");
+    resumeBG->setScale(0.7);
     resumeBG->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.5));
     resumeBG->setEnabled(false);
     
@@ -644,9 +644,9 @@ void MainGameScene::showStartInfo()
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
     
     CCMenuItemImage* pStartItem;
-    pStartItem = CCMenuItemImage::create("logo_Info.png", "logo_Info.png",this,menu_selector(MainGameScene::startGame));
+    pStartItem = CCMenuItemImage::create("logo_Info2.png", "logo_Info2.png",this,menu_selector(MainGameScene::startGame));
     pStartItem->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.5));
-    pStartItem->setScale(0.6);
+    pStartItem->setScale(0.7);
      CCSize pStartItemSize = pStartItem->getContentSize();
     
     CCLabelTTF* startLabel1;

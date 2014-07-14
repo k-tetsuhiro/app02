@@ -9,9 +9,13 @@
 #include "ResultScene.h"
 #include "ConstCommon.h"
 #include "MainGameScene.h"
+#include "TitleScene.h"
 
 USING_NS_CC;
 using namespace std;
+
+//const
+int ResultScene::max_level = 15;
 
 /*
 CCScene* ResultScene::scene()
@@ -120,7 +124,11 @@ bool ResultScene::initWithParam(int level, int minScore, int resultScore)
     
     //次のレベルへ
     CCMenuItemImage* pNextLevelItem;
-    pNextLevelItem = CCMenuItemImage::create("next.png", "next.png",this,menu_selector(ResultScene::nextLevelGame));
+    if (m_level == max_level){
+        pNextLevelItem = CCMenuItemImage::create("next.png", "next.png",this,menu_selector(ResultScene::showTitleMenu));
+    }else{
+        pNextLevelItem = CCMenuItemImage::create("next.png", "next.png",this,menu_selector(ResultScene::nextLevelGame));
+    }
     pNextLevelItem->setScale(0.3);
     pNextLevelItem->setPosition(ccp(winSize.width * 0.7, winSize.height * 0.3));
     
@@ -144,6 +152,14 @@ void ResultScene::replayGame()
 void ResultScene::nextLevelGame()
 {
     CCScene* scene = MainGameScene ::sceneWithLevel(m_level+1);
+    CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
+    CCDirector::sharedDirector()->replaceScene(tran);
+    
+}
+
+void ResultScene::showTitleMenu()
+{
+    CCScene* scene = TitleScene::scene();
     CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
     CCDirector::sharedDirector()->replaceScene(tran);
     

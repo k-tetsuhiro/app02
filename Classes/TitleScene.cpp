@@ -33,44 +33,13 @@ bool TitleScene::init()
     // 初期化色を変更
     //if (!CCLayerColor::initWithColor(ccc4(83, 166, 103, 255))) //RGBA
     //if (!CCLayerColor::initWithColor(ccc4(255, 254, 223, 255))) //RGBA
-    if (!CCLayerColor::initWithColor(ccc4(0xF9,0xF7,0xAF,0xFF))) //RGBA
+    if (!CCLayerColor::initWithColor(ccc4(0xF8,0xEC,0xDE,0xFF))) //RGBA
     {
         return false;
     }
     
     srand((unsigned)time(NULL));
     CCSize size = CCDirector::sharedDirector()->getWinSize();
-    /*
-    //BG start
-    if(!SimpleAudioEngine::sharedEngine()->isBackgroundMusicPlaying()){
-        SimpleAudioEngine::sharedEngine()->playBackgroundMusic("titleBgm.mp3", true);
-    }
-    
-    //background
-    CCSprite* pBG = CCSprite::create("title_bg.png");
-    pBG->setPosition(ccp(size.width * 0.5, size.height * 0.5));
-    this->addChild(pBG);
-    
-    CCSize bgSize = pBG->getContentSize();
-    
-    //cat eyes
-    CCSprite* pLeftEye = CCSprite::create("cateye.png");
-    pLeftEye->setPosition(ccp(bgSize.width * 0.43, bgSize.height * 0.28));
-    pLeftEye->runAction(CCRepeatForever::create(CCRotateBy::create(1, 360)));
-    pBG->addChild(pLeftEye);
-    
-    CCSprite* pRightEye = CCSprite::create("cateye.png");
-    pRightEye->setPosition(ccp(bgSize.width * 0.54, bgSize.height * 0.28));
-    pRightEye->runAction(CCRepeatForever::create(CCRotateBy::create(1, 360)));
-    pBG->addChild(pRightEye);
-    */
-    
-    /*
-    //title
-    CCSprite* pTitle = CCSprite::create("title.png");
-    pTitle->setPosition(ccp(size.width * 0.5, size.height * 0.6));
-    this->addChild(pTitle);
-     */
     
     CCSprite* pA = CCSprite::create("logo_A.png");
     pA->setPosition(ccp(size.width * 0.1, size.height * 0.8));
@@ -78,22 +47,22 @@ bool TitleScene::init()
     this->addChild(pA);
     
     CCSprite* pR = CCSprite::create("logo_R.png");
-    pR->setPosition(ccp(size.width * 0.27, size.height * 0.8));
+    pR->setPosition(ccp(size.width * 0.26, size.height * 0.8));
     pR->setScale(0.6);
     this->addChild(pR);
     
     CCSprite* pR2 = CCSprite::create("logo_R.png");
-    pR2->setPosition(ccp(size.width * 0.43, size.height * 0.8));
+    pR2->setPosition(ccp(size.width * 0.42, size.height * 0.8));
     pR2->setScale(0.6);
     this->addChild(pR2);
     
     CCSprite* pO = CCSprite::create("logo_O.png");
-    pO->setPosition(ccp(size.width * 0.6, size.height * 0.8));
+    pO->setPosition(ccp(size.width * 0.58, size.height * 0.8));
     pO->setScale(0.6);
     this->addChild(pO);
     
     CCSprite* pW = CCSprite::create("logo_W.png");
-    pW->setPosition(ccp(size.width * 0.77, size.height * 0.8));
+    pW->setPosition(ccp(size.width * 0.74, size.height * 0.8));
     pW->setScale(0.6);
     this->addChild(pW);
     
