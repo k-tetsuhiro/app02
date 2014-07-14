@@ -63,5 +63,23 @@ public class app02 extends Cocos2dxActivity{
 
     static {
         System.loadLibrary("cocos2dcpp");
-    }     
+    }
+    
+    @Override
+    public void onPause() {
+       adView.pause();
+       super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+       super.onResume();
+       adView.resume();
+    }
+
+    @Override
+    public void onDestroy() {
+       adView.destroy();
+       super.onDestroy();
+    }
 }
