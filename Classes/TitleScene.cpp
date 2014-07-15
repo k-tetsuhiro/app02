@@ -11,6 +11,7 @@
 #include "LevelSelectScene.h"
 #include "ConstCommon.h"
 #include "Animation.h"
+#include "Tutorial.h"
 
 
 USING_NS_CC;
@@ -101,7 +102,8 @@ bool TitleScene::init()
 void TitleScene::menuStartCallback(CCObject *pSender)
 {
     //show game
-    CCScene* scene = LevelSelectScene ::scene();
+    //CCScene* scene = LevelSelectScene ::scene();
+    CCScene* scene = Tutorial::scene();
     CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
     CCDirector::sharedDirector()->replaceScene(tran);
 }

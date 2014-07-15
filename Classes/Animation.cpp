@@ -27,3 +27,14 @@ CCFiniteTimeAction* Animation::clearCharaAction()
     
     return CCSequence::create(delay1, scaleUp, delay2, scaleDown, NULL);
 }
+
+CCFiniteTimeAction* Animation::tutorialArrowTouchAction(CCObject* target, SEL_CallFunc selector)
+{
+    CCRotateBy* rotate = CCRotateBy::create(0.3, 90);
+    CCScaleTo* scaleUp = CCScaleTo::create( 0.15,1.8);
+    CCScaleTo* scaleDown = CCScaleTo::create(0.15,1.0);
+    CCSequence* seqScale = CCSequence::createWithTwoActions(CCEaseInOut::create(scaleUp, 2), CCEaseInOut::create(scaleDown, 2));
+    CCSpawn* spaRotateAndScale = CCSpawn::createWithTwoActions(rotate, seqScale);
+    CCCallFunc* func = CCCallFunc::create(target, selector);
+    return CCSequence::create(spaRotateAndScale,func, NULL);
+}

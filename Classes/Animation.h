@@ -19,6 +19,7 @@ class Animation
 public:
     static CCFiniteTimeAction* titleCharaAction();
     static CCFiniteTimeAction* clearCharaAction();
+    static CCFiniteTimeAction* tutorialArrowTouchAction(CCObject* target, SEL_CallFunc selector);
 };
 
 #endif /* defined(__app02__Animation__) */
