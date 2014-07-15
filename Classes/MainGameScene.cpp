@@ -131,6 +131,9 @@ void MainGameScene::makeArrows()
     
     // higscorekey:m_level
     highScoreKey = ConstCommon::getHighScoreKey(m_level);
+    
+    //totalGameCount
+    totalAllGameCountKey = ConstCommon::getTotalAllGameCountKey();
 
 
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
@@ -205,7 +208,10 @@ void MainGameScene::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEv
             if(arrowRect.containsPoint(touchPoint)){
                 
                 //タッチ数を更新して表示
-                totalGameCount++;
+                if(totalGameCount < 99){
+                    totalGameCount++;
+                }
+                
                 showGameCountLabel();
                 
                 //z-indexあげる
@@ -317,11 +323,16 @@ void MainGameScene::endJudgemnet()
     CCUserDefault* userDefault = CCUserDefault::sharedUserDefault();
     
     int highScore = userDefault->getFloatForKey(highScoreKey.c_str(),ConstCommon::DEFAULT_HIGH_SCORE_NUM);
-    
     if( highScore > totalGameCount){
         isHighScore = true;
         userDefault->setFloatForKey(highScoreKey.c_str(), totalGameCount);
     }
+    
+    //ゲーム回数を記録
+    int totalAllGameCount = userDefault->getFloatForKey(totalAllGameCountKey.c_str(),0);
+    userDefault->setFloatForKey(totalAllGameCountKey.c_str(), totalAllGameCount+1);
+    
+    
     
     //終了アニメーション
     this->endAnimation();

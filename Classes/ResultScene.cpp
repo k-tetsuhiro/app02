@@ -47,7 +47,7 @@ bool ResultScene::initWithParam(int level, int minScore, int resultScore)
 {
     
     // 初期化色を変更
-    if (!CCLayerColor::initWithColor(ccc4(255, 255, 255, 255))) //RGBA
+    if (!CCLayerColor::initWithColor(ccc4(0xF8,0xEC,0xDE,0xFF))) //RGBA
     {
         return false;
     }

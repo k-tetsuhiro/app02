@@ -85,7 +85,7 @@ void Tutorial::endScene1()
     
     //start button
     CCMenuItemImage* pNextItem;
-    pNextItem = CCMenuItemImage::create("button2.png", "button2.png",this,menu_selector(Tutorial::endTutorial));
+    pNextItem = CCMenuItemImage::create("button2.png", "button2.png",this,menu_selector(Tutorial::showScene2));
     pNextItem->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.3));
     
     CCLabelTTF* nextLabel;
@@ -101,9 +101,102 @@ void Tutorial::endScene1()
     if(pScene1Item) {
         pScene1Item->setOpacity(0);
     }
-
-   
 }
+
+void Tutorial::showScene2()
+{
+    this->removeChild(pMenuScene1);
+    
+    
+    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+    
+    //start button
+    CCMenuItemImage* pScene2Item1;
+    pScene2Item1 = CCMenuItemImage::create("button_off.png", "button_off.png",this,menu_selector(Tutorial::doScene2));
+    pScene2Item1->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.5));
+    pScene2Item1->setTag(TAG_SCENE_2_ITEM_1);
+    
+    CCSprite* pArrow1 = CCSprite::create("button_off.png");
+    CCMenuItem* pScene2Item2 = CCMenuItem::create();
+    pScene2Item2->setPosition(ccp(winSize.width * 0.5 + pArrow1->getContentSize().width , winSize.height * 0.5));
+    pScene2Item2->addChild(pArrow1);
+    
+    CCSprite* pArrow2 = CCSprite::create("button_off.png");
+    CCMenuItem* pScene2Item3 = CCMenuItem::create();
+    pScene2Item3->setPosition(ccp(winSize.width * 0.5 - pArrow2->getContentSize().width , winSize.height * 0.5));
+    pScene2Item3->addChild(pArrow2);
+    
+    CCString* touchStr = CCString::createWithFormat("CENTER\nTOUCH!");
+    CCLabelTTF* touchLabel = CCLabelTTF::create(touchStr->getCString(), "Copperplate", 80.0);
+    touchLabel->setColor(ccc3(0, 0, 0));
+    
+    CCMenuItem* pScene1Item4 = CCMenuItem::create();
+    pScene1Item4->addChild(touchLabel);
+    pScene1Item4->setPosition(ccp(winSize.width * 0.5 ,winSize.height * 0.8));
+    
+    
+    
+    pMenuScene2 = CCMenu::create(pScene2Item1,pScene2Item2,pScene2Item3,pScene1Item4,NULL);
+    pMenuScene2->setPosition(CCPointZero);
+    this->addChild(pMenuScene2);
+    
+    
+}
+
+void Tutorial::doScene2()
+{
+    CCMenuItemImage* pScene2Item = (CCMenuItemImage*) pMenuScene2->getChildByTag(TAG_SCENE_2_ITEM_1);
+    if(pScene2Item) {
+        SEL_CallFunc selector = callfunc_selector(Tutorial::endScene2);
+        pScene2Item->runAction(Animation::tutorialArrowTouchAction(this, selector));
+    }
+}
+
+
+void Tutorial::endScene2()
+{
+    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+    
+    CCSprite* pArrow = CCSprite::create("button_on.png");
+    pArrow->setRotation(90);
+    CCMenuItem* pArrowItem = CCMenuItem::create();
+    pArrowItem->addChild(pArrow);
+    pArrowItem->setPosition(ccp(winSize.width/2,winSize.height/2));
+    pMenuScene2->addChild(pArrowItem);
+    
+    CCSprite* pArrow2 = CCSprite::create("button_on.png");
+    CCMenuItem* pArrowItem2 = CCMenuItem::create();
+    pArrowItem2->addChild(pArrow2);
+    pArrowItem2->setPosition(ccp(winSize.width/2 + pArrow2->getContentSize().width,winSize.height/2));
+    pArrowItem2->setZOrder(10);
+    pMenuScene2->addChild(pArrowItem2);
+
+    
+    
+    //start button
+    CCMenuItemImage* pNextItem;
+    pNextItem = CCMenuItemImage::create("button2.png", "button2.png",this,menu_selector(Tutorial::endTutorial));
+    pNextItem->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.3));
+    
+    CCLabelTTF* nextLabel;
+    nextLabel = CCLabelTTF::create("NEXT", "Arial", 30.0);
+    
+    CCSize pStartItemSize = pNextItem->getContentSize();
+    nextLabel->setPosition(ccp(pStartItemSize.width / 2 ,pStartItemSize.height / 2));
+    pNextItem->addChild(nextLabel);
+    
+    pMenuScene2->addChild(pNextItem);
+    
+    CCMenuItemImage* pScene2Item = (CCMenuItemImage*) pMenuScene2->getChildByTag(TAG_SCENE_2_ITEM_1);
+    if(pScene2Item) {
+        pScene2Item->setOpacity(0);
+    }
+}
+
+
+
+
+
 
 void Tutorial::endTutorial()
 {

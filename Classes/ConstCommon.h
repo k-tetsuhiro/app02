@@ -19,6 +19,7 @@ public:
     static const int TOTAL_ARROW_NUM = 25;
     static const int DEFAULT_HIGH_SCORE_NUM = 99;
     static string getHighScoreKey(int level);
+    static string getTotalAllGameCountKey();
 
 };
 

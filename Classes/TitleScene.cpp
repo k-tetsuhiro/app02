@@ -102,8 +102,18 @@ bool TitleScene::init()
 void TitleScene::menuStartCallback(CCObject *pSender)
 {
     //show game
-    //CCScene* scene = LevelSelectScene ::scene();
-    CCScene* scene = Tutorial::scene();
+    CCUserDefault*  userDefault = CCUserDefault::sharedUserDefault();
+    string totalAllGameCountKey = ConstCommon::getTotalAllGameCountKey();
+    int totalAllGameCount = userDefault->getFloatForKey(totalAllGameCountKey.c_str(),0);
+    
+    CCScene* scene;
+    //3回以下ならチュートリアル表示
+    if(totalAllGameCount <= 2){
+        scene = Tutorial::scene();
+    }else{
+        scene = LevelSelectScene ::scene();
+    }
+    
     CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
     CCDirector::sharedDirector()->replaceScene(tran);
 }

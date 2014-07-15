@@ -23,6 +23,7 @@ private:
     float gameTime;
     int minimamCount;
     string highScoreKey;
+    string totalAllGameCountKey;
     bool endFlag;
     bool isHighScore;
     bool isResume;

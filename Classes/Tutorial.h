@@ -18,12 +18,18 @@ class Tutorial : public cocos2d::CCLayerColor
 {
 private:
     CCMenu* pMenuScene1;
+    CCMenu* pMenuScene2;
+    
     void showScene1();
     void doScene1();
     void endScene1();
+    void showScene2();
+    void doScene2();
+    void endScene2();
     void endTutorial();
     
     const static int TAG_SCENE_1_ITEM_1 = 101;
+    const static int TAG_SCENE_2_ITEM_1 = 201;
     
     
 public:
