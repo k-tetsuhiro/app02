@@ -49,24 +49,6 @@ MainGameScene* MainGameScene::createWithLevel(int level)
     }
 }
 
-/*
- MainGameScene* MainGameScene::create()
- {
- MainGameScene *pRet = new MainGameScene();
- if (pRet && pRet->init())
- {
- pRet->autorelease();
- return pRet;
- }
- else
- {
- delete pRet;
- pRet = NULL;
- return NULL;
- }
- 
- }
- */
 
 bool MainGameScene::initWithLevel(int level)
 {
@@ -97,29 +79,14 @@ bool MainGameScene::initWithLevel(int level)
     setTouchEnabled(false);
     setTouchMode(kCCTouchesOneByOne);
     
-    //乱数初期化
-    srand((unsigned int)time(NULL));
-    
-    //背景表示
-    //showBackgroud();
-    
     //矢印を配置
     makeArrows();
-    
-    //ゲーム時間を表示
-    //showGametimeLabel();
     
     //ゲーム手数表示
     showGameCountLabel();
     
-    //最小手数表示
-    //showMinimamCount();
-    
     //リトライボタン表示
     makeRetryButton();
-    
-    //クリアダイアログ作成
-    //makeClearDaialog();
     
     //一時中断ダイアログ作成
     makeResumeDaialog();
@@ -191,7 +158,6 @@ void MainGameScene::makeArrows()
             pArrowOn->setPosition(ccp( ((winSize.width - arrowOnSize.width * COL_NUM) / 2) + (arrowOnSize.width / 2 ) + (col - 1) * arrowOnSize.width  ,
                                       ((winSize.height - arrowOnSize.height * ROW_NUM) / 2) + (arrowOnSize.height / 2 ) + (row - 1) * arrowOnSize.height
                                       ));
-            CCLog("front:%d",arrowFront[index -1]);
             if(arrowFront[index - 1] == 1){
                 arrowObj->onFrontArrowSprite(pArrowOff);
             }else{
@@ -346,9 +312,6 @@ void MainGameScene::endJudgemnet()
     //終了
     endFlag = true;
     
-    //時間計測終了
-    //this->unschedule(schedule_selector(MainGameScene::measureGameTime));
-    
     //ハイスコアであれば保持
     CCUserDefault* userDefault = CCUserDefault::sharedUserDefault();
     
@@ -415,14 +378,6 @@ void MainGameScene::showGameCountLabel()
              countLabel->setString(countString->getCString());
             return;
         }
-    /*
-    }
-
-    CCLabelTTF* countLabel = (CCLabelTTF*)this->getChildByTag(tagGameCountLavel);
-    if(countLabel){
-        CCLOG("in");
-        countLabel->setString(countString->getCString());
-     */
     }else{
         CCSize winSize = CCDirector::sharedDirector()->getWinSize();
         
@@ -498,7 +453,6 @@ void MainGameScene::makeRetryButton()
     CCSize pRetryItemSize = retryItem->getContentSize();
     retryItem->setPosition(ccp( pRetryItemSize.width * 0.4, winSize.height - pRetryItemSize.height * 0.4));
     
-    //retryItem->setPosition(ccp(winSize.width * 0.05, winSize.height * 0.95));
     CCMenu* retryButton = CCMenu::create(retryItem,NULL);
     retryButton->setPosition(CCPointZero);
     retryButton->setTag(tagRetryButton);
@@ -596,15 +550,6 @@ void MainGameScene::showClearDialog()
     CCScene* newGameScene = (CCScene*)ResultScene::createWithParam(m_level, minimamCount, totalGameCount);
     CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, newGameScene);
     CCDirector::sharedDirector()->replaceScene(tran);
-    
-    /*
-    CCMenu* clearDialog = (CCMenu*)this->getChildByTag(tagClearDialog);
-    if(clearDialog){
-        clearDialog->setOpacity(255);
-        clearDialog->setEnabled(true);
-    }
-     */
-
 }
 
 void MainGameScene::showResumeDialog()
@@ -633,7 +578,6 @@ void MainGameScene::returnMainGame()
 void MainGameScene::tapTitleButton()
 {
     CCScene* scene = TitleScene ::scene();
-    //CCTransitionJumpZoom* tran = CCTransitionJumpZoom::create(1, scene);
     CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
     CCDirector::sharedDirector()->replaceScene(tran);
     
@@ -749,19 +693,13 @@ void MainGameScene::startGame()
     if(startInfo){
         this->removeChild(startInfo);
     }
-
     
-    //タイマー開始
-    //this->schedule(schedule_selector(MainGameScene::measureGameTime));
 }
 
 
 
 void MainGameScene::onEnterTransitionDidFinish()
 {
-    //カウントダウン開始
-    //showCountDown();
-    
     //メニュー表示
     showStartInfo();
 

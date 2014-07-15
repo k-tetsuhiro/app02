@@ -24,15 +24,8 @@ CCScene* TitleScene::scene(){
 
 bool TitleScene::init()
 {
-    /*
-    if(!CCLayer::init()){
-        return false;
-    }
-     */
     
     // 初期化色を変更
-    //if (!CCLayerColor::initWithColor(ccc4(83, 166, 103, 255))) //RGBA
-    //if (!CCLayerColor::initWithColor(ccc4(255, 254, 223, 255))) //RGBA
     if (!CCLayerColor::initWithColor(ccc4(0xF8,0xEC,0xDE,0xFF))) //RGBA
     {
         return false;
@@ -92,9 +85,6 @@ bool TitleScene::init()
     CCMenu* pMenu = CCMenu::create(pStartItem,NULL);
     pMenu->setPosition(CCPointZero);
     this->addChild(pMenu);
-    
-    //showHighScore
-    //showHighScoreLabel();
     
     return true;
     

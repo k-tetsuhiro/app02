@@ -15,7 +15,6 @@ using namespace std;
 
 void GameData::makeData()
 {
-    CCLOG("init");
     string fullPath = CCFileUtils::sharedFileUtils()->fullPathForFilename(this->filePath.c_str());
     unsigned long* pFileSize =  (unsigned long*) malloc(sizeof(unsigned long));
     unsigned char* pData = CCFileUtils::sharedFileUtils()->getFileData(fullPath.c_str(), "r", pFileSize);
@@ -40,7 +39,6 @@ void GameData::makeData()
         }
 
     }else{
-        CCLOG("%s",err.c_str());
         CCAssert(false, "json perse err");
     }
    

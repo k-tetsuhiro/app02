@@ -17,13 +17,6 @@ using namespace std;
 //const
 int ResultScene::max_level = 15;
 
-/*
-CCScene* ResultScene::scene()
-{
-    return ResultScene::sceneWithParam(1);
-}
- */
-
 
 CCScene* ResultScene::sceneWithParam(int level, int minScore, int resultScore)
 {
