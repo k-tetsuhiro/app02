@@ -206,7 +206,8 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/MainGameScene.o: \
  jni/../../Classes/ResultScene.h jni/../../Classes/Arrow.h \
  jni/../../Classes/TitleScene.h jni/../../Classes/Util.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/sources/cxx-stl/gnu-libstdc++/4.6/include/fstream \
- jni/../../Classes/ConstCommon.h jni/../../Classes/GameData.h
+ jni/../../Classes/ConstCommon.h jni/../../Classes/GameData.h \
+ jni/../../Classes/Animation.h
 
 jni/../../Classes/MainGameScene.h:
 
@@ -629,3 +630,5 @@ jni/../../Classes/Util.h:
 jni/../../Classes/ConstCommon.h:
 
 jni/../../Classes/GameData.h:
+
+jni/../../Classes/Animation.h:

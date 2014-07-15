@@ -226,6 +226,13 @@
 		379BB9D417F03F3700829B88 /* SceneReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 379BB99317F03F3700829B88 /* SceneReader.cpp */; };
 		46513EB1187BFBA200B5ABE1 /* UITouchGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46513EAF187BFBA200B5ABE1 /* UITouchGroup.cpp */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
+		9D2A4CC21975433500BC5457 /* clear_A.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2A4CBD1975433500BC5457 /* clear_A.png */; };
+		9D2A4CC31975433500BC5457 /* clear_C.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2A4CBE1975433500BC5457 /* clear_C.png */; };
+		9D2A4CC41975433500BC5457 /* clear_E.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2A4CBF1975433500BC5457 /* clear_E.png */; };
+		9D2A4CC51975433500BC5457 /* clear_L.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2A4CC01975433500BC5457 /* clear_L.png */; };
+		9D2A4CC61975433500BC5457 /* clear_R.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2A4CC11975433500BC5457 /* clear_R.png */; };
+		9D2A4CCA19754BE100BC5457 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D2A4CC819754BE100BC5457 /* Animation.cpp */; };
+		9D2A4CCD19754C1D00BC5457 /* Tutorial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D2A4CCB19754C1D00BC5457 /* Tutorial.cpp */; };
 		9D5239E3195837E10064DC61 /* Arrow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D5239D5195837E10064DC61 /* Arrow.cpp */; };
 		9D5239E4195837E10064DC61 /* ConstCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D5239D7195837E10064DC61 /* ConstCommon.cpp */; };
 		9D5239E5195837E10064DC61 /* LevelSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D5239D9195837E10064DC61 /* LevelSelectScene.cpp */; };
@@ -772,6 +779,15 @@
 		46513EAF187BFBA200B5ABE1 /* UITouchGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UITouchGroup.cpp; sourceTree = "<group>"; };
 		46513EB0187BFBA200B5ABE1 /* UITouchGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITouchGroup.h; sourceTree = "<group>"; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
+		9D2A4CBD1975433500BC5457 /* clear_A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear_A.png; sourceTree = "<group>"; };
+		9D2A4CBE1975433500BC5457 /* clear_C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear_C.png; sourceTree = "<group>"; };
+		9D2A4CBF1975433500BC5457 /* clear_E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear_E.png; sourceTree = "<group>"; };
+		9D2A4CC01975433500BC5457 /* clear_L.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear_L.png; sourceTree = "<group>"; };
+		9D2A4CC11975433500BC5457 /* clear_R.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear_R.png; sourceTree = "<group>"; };
+		9D2A4CC819754BE100BC5457 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Animation.cpp; path = ../Classes/Animation.cpp; sourceTree = "<group>"; };
+		9D2A4CC919754BE100BC5457 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Animation.h; path = ../Classes/Animation.h; sourceTree = "<group>"; };
+		9D2A4CCB19754C1D00BC5457 /* Tutorial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tutorial.cpp; path = ../Classes/Tutorial.cpp; sourceTree = "<group>"; };
+		9D2A4CCC19754C1D00BC5457 /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tutorial.h; path = ../Classes/Tutorial.h; sourceTree = "<group>"; };
 		9D5239D5195837E10064DC61 /* Arrow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Arrow.cpp; sourceTree = "<group>"; };
 		9D5239D6195837E10064DC61 /* Arrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arrow.h; sourceTree = "<group>"; };
 		9D5239D7195837E10064DC61 /* ConstCommon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConstCommon.cpp; sourceTree = "<group>"; };
@@ -1406,6 +1422,10 @@
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				9DEA546C196D4DFA0021D950 /* GameData.cpp */,
 				9DEA546D196D4DFA0021D950 /* GameData.h */,
+				9D2A4CC819754BE100BC5457 /* Animation.cpp */,
+				9D2A4CC919754BE100BC5457 /* Animation.h */,
+				9D2A4CCB19754C1D00BC5457 /* Tutorial.cpp */,
+				9D2A4CCC19754C1D00BC5457 /* Tutorial.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -1866,6 +1886,11 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9D2A4CBD1975433500BC5457 /* clear_A.png */,
+				9D2A4CBE1975433500BC5457 /* clear_C.png */,
+				9D2A4CBF1975433500BC5457 /* clear_E.png */,
+				9D2A4CC01975433500BC5457 /* clear_L.png */,
+				9D2A4CC11975433500BC5457 /* clear_R.png */,
 				9DB46BF51973F42600D4C287 /* logo_Info2.png */,
 				9DB46BEB1973ECAD00D4C287 /* level_circle_1.png */,
 				9DB46BEC1973ECAD00D4C287 /* level_circle_2.png */,
@@ -2033,6 +2058,7 @@
 				9D523A2B195838420064DC61 /* star.png in Resources */,
 				9DDBD58B196EAA430033CB59 /* Lv7.json in Resources */,
 				9D523A16195838420064DC61 /* Icon-72.png in Resources */,
+				9D2A4CC21975433500BC5457 /* clear_A.png in Resources */,
 				9DDBD589196EAA430033CB59 /* Lv5.json in Resources */,
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				9D523A14195838420064DC61 /* Marker Felt.ttf in Resources */,
@@ -2050,6 +2076,7 @@
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
 				9D97CB24195AF037008E282A /* level_circle.png in Resources */,
 				9D523A15195838420064DC61 /* Icon-57.png in Resources */,
+				9D2A4CC31975433500BC5457 /* clear_C.png in Resources */,
 				9D523A10195838420064DC61 /* button_on.png in Resources */,
 				9DDBD593196EAA430033CB59 /* Lv15.json in Resources */,
 				9D523A1E195838420064DC61 /* logo_R.png in Resources */,
@@ -2060,6 +2087,8 @@
 				9D523A29195838420064DC61 /* next.png in Resources */,
 				9DDBD57C196EA3AB0033CB59 /* Lv3.json in Resources */,
 				9D523A28195838420064DC61 /* menu_waku.png in Resources */,
+				9D2A4CC41975433500BC5457 /* clear_E.png in Resources */,
+				9D2A4CC61975433500BC5457 /* clear_R.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				9DDBD58C196EAA430033CB59 /* Lv8.json in Resources */,
@@ -2069,6 +2098,7 @@
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				9DB46BF61973F42600D4C287 /* logo_Info2.png in Resources */,
 				9DB46BF41973ECAD00D4C287 /* level_circle_5.png in Resources */,
+				9D2A4CC51975433500BC5457 /* clear_L.png in Resources */,
 				9D523A1D195838420064DC61 /* logo_O.png in Resources */,
 				9DB46BF01973ECAD00D4C287 /* level_circle_1.png in Resources */,
 				9D523A2C195838420064DC61 /* touch_waku.png in Resources */,
@@ -2243,6 +2273,7 @@
 				1A8F3B79175E05DA00049216 /* extension.cpp in Sources */,
 				1A8F3B7A175E05DA00049216 /* Json.cpp in Sources */,
 				1A8F3B7B175E05DA00049216 /* RegionAttachment.cpp in Sources */,
+				9D2A4CCA19754BE100BC5457 /* Animation.cpp in Sources */,
 				1A8F3B7C175E05DA00049216 /* Skeleton.cpp in Sources */,
 				1A8F3B7D175E05DA00049216 /* SkeletonData.cpp in Sources */,
 				1A8F3B7E175E05DA00049216 /* SkeletonJson.cpp in Sources */,
@@ -2260,6 +2291,7 @@
 				379BB99B17F03F3700829B88 /* CCProcessBase.cpp in Sources */,
 				379BB99C17F03F3700829B88 /* CCTween.cpp in Sources */,
 				379BB99D17F03F3700829B88 /* CCArmature.cpp in Sources */,
+				9D2A4CCD19754C1D00BC5457 /* Tutorial.cpp in Sources */,
 				379BB99E17F03F3700829B88 /* CCBone.cpp in Sources */,
 				379BB99F17F03F3700829B88 /* CCDatas.cpp in Sources */,
 				379BB9A017F03F3700829B88 /* CCBatchNode.cpp in Sources */,

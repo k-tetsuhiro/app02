@@ -1,0 +1,29 @@
+//
+//  Animation.cpp
+//  app02
+//
+//  Created by k_tetsuhiro on 2014/07/15.
+//
+//
+
+#include "Animation.h"
+
+CCFiniteTimeAction* Animation::titleCharaAction()
+{
+    CCDelayTime* delay1 = CCDelayTime::create(1.3);
+    CCScaleTo* scaleUp = CCScaleTo::create(0.2, 1.0);
+    CCDelayTime* delay2 = CCDelayTime::create(0.1);
+    CCScaleTo* scaleDown = CCScaleTo::create(0.2, 0.6);
+    
+    return CCSequence::create(delay1, scaleUp, delay2, scaleDown, NULL);
+}
+
+CCFiniteTimeAction* Animation::clearCharaAction()
+{
+    CCDelayTime* delay1 = CCDelayTime::create(0.1);
+    CCScaleTo* scaleUp = CCScaleTo::create(0.2, 1.1);
+    CCDelayTime* delay2 = CCDelayTime::create(0.3);
+    CCScaleTo* scaleDown = CCScaleTo::create(0.2, 0.7);
+    
+    return CCSequence::create(delay1, scaleUp, delay2, scaleDown, NULL);
+}

@@ -92,7 +92,7 @@ void LevelSelectScene::menuStartCallback(CCObject *pSender)
    
     
     int bestScore = userDefault->getFloatForKey(highScoreKey.c_str(),99);
-    CCString* bestStr = CCString::createWithFormat("Min:%d  Best:%d",minScore,bestScore);
+    CCString* bestStr = CCString::createWithFormat("MIN:%d  BEST:%d",minScore,bestScore);
     CCLabelTTF* bestLabel;
     bestLabel = CCLabelTTF::create(bestStr->getCString(), "Copperplate", 60.0);
     bestLabel->setColor(ccc3(0, 0, 0));
@@ -101,7 +101,7 @@ void LevelSelectScene::menuStartCallback(CCObject *pSender)
     
     
     CCMenuItemImage* titleItem = CCMenuItemImage::create("button1.png","button1.png" ,this, menu_selector(LevelSelectScene::startGame));
-    titleItem->setPosition(ccp(winSize.width * 0.3, winSize.height * 0.45));
+    titleItem->setPosition(ccp(winSize.width * 0.3, winSize.height * 0.42));
     
     
     CCLabelTTF* titleLabel;
@@ -115,7 +115,7 @@ void LevelSelectScene::menuStartCallback(CCObject *pSender)
     
     
     CCMenuItemImage* returnGameItem = CCMenuItemImage::create("button2.png","button2.png" ,this, menu_selector(LevelSelectScene::hiddenStartMenu));
-    returnGameItem->setPosition(ccp(winSize.width * 0.7, winSize.height * 0.45));
+    returnGameItem->setPosition(ccp(winSize.width * 0.7, winSize.height * 0.42));
     
     CCLabelTTF* returnGameLabel;
     returnGameLabel = CCLabelTTF::create("CANCLE", "Arial", 30.0);

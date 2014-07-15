@@ -14,6 +14,7 @@
 #include "Util.h"
 #include "ConstCommon.h"
 #include "GameData.h"
+#include "Animation.h"
 
 USING_NS_CC;
 using namespace std;
@@ -355,12 +356,41 @@ void MainGameScene::endAnimation()
     
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
     
-    CCSprite* pClear = CCSprite::create("logo_clear.png");
-    pClear->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.5));
-    pClear->setScale(1.5f);
-    pClear->setZOrder(Z_ORDER_CLEAR_DIALOG);
-    this->addChild(pClear);
-   
+    CCSprite* pC = CCSprite::create("clear_C.png");
+    pC->setPosition(ccp(winSize.width * 0.1, winSize.height * 0.6));
+    pC->setScale(0.0);
+    pC->setZOrder(Z_ORDER_CLEAR_DIALOG);
+    pC->runAction(CCSequence::create(CCDelayTime::create(0.1),Animation::clearCharaAction(),NULL));
+    this->addChild(pC);
+    
+    CCSprite* pL = CCSprite::create("clear_L.png");
+    pL->setPosition(ccp(winSize.width * 0.3, winSize.height * 0.6));
+    pL->setScale(0.0);
+    pL->setZOrder(Z_ORDER_CLEAR_DIALOG);
+    pL->runAction(CCSequence::create(CCDelayTime::create(0.3),Animation::clearCharaAction(),NULL));
+    this->addChild(pL);
+    
+    CCSprite* pE = CCSprite::create("clear_E.png");
+    pE->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.6));
+    pE->setScale(0.0);
+    pE->setZOrder(Z_ORDER_CLEAR_DIALOG);
+    pE->runAction(CCSequence::create(CCDelayTime::create(0.5),Animation::clearCharaAction(),NULL));
+    this->addChild(pE);
+    
+    CCSprite* pA = CCSprite::create("clear_A.png");
+    pA->setPosition(ccp(winSize.width * 0.7, winSize.height * 0.6));
+    pA->setScale(0.0);
+    pA->setZOrder(Z_ORDER_CLEAR_DIALOG);
+    pA->runAction(CCSequence::create(CCDelayTime::create(0.7),Animation::clearCharaAction(),NULL));
+    this->addChild(pA);
+    
+    CCSprite* pR = CCSprite::create("clear_R.png");
+    pR->setPosition(ccp(winSize.width * 0.9, winSize.height * 0.6));
+    pR->setScale(0.0);
+    pR->setZOrder(Z_ORDER_CLEAR_DIALOG);
+    pR->runAction(CCSequence::create(CCDelayTime::create(0.9),Animation::clearCharaAction(),NULL));
+    this->addChild(pR);
+
     
     
 }
@@ -608,9 +638,9 @@ void MainGameScene::showStartInfo()
 
 
     
-    CCString* minCountString = CCString::createWithFormat("min  %d  Touch",minimamCount);
+    CCString* minCountString = CCString::createWithFormat("MIN  %d  TOUCH",minimamCount);
     CCLabelTTF* startLabel2;
-    startLabel2 = CCLabelTTF::create(minCountString->getCString(), "Arial", 50.0);
+    startLabel2 = CCLabelTTF::create(minCountString->getCString(), "Copperplate", 50.0);
     startLabel2->setColor(ccc3(0, 0, 0));
     startLabel2->setPosition(ccp(pStartItemSize.width * 0.5 ,pStartItemSize.height * 0.2));
     pStartItem->addChild(startLabel2);
