@@ -136,7 +136,7 @@ void Tutorial::showScene2()
     
     
     
-    pMenuScene2 = CCMenu::create(pScene2Item1,pScene2Item2,pScene2Item3,pScene1Item4,NULL);
+    pMenuScene2 = CCMenu::create(pScene2Item2,pScene2Item3,pScene1Item4,pScene2Item1,NULL);
     pMenuScene2->setPosition(CCPointZero);
     this->addChild(pMenuScene2);
     

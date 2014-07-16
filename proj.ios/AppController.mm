@@ -60,7 +60,7 @@ static AppDelegate s_sharedApplication;
     [bannerView_ setRootViewController:viewController];
     
     GADRequest *request = [GADRequest request];
-    request.testing = YES; //テスト中の合図。本番ではコメントアウトを。
+    //request.testing = YES; //テスト中の合図。本番ではコメントアウトを。
     [bannerView_ loadRequest:request];
 
     return YES;
