@@ -539,7 +539,7 @@ void MainGameScene::makeResumeDaialog()
    
     
     CCMenuItemImage* titleItem = CCMenuItemImage::create("button1.png","button1.png" ,this, menu_selector(MainGameScene::tapTitleButton));
-    titleItem->setPosition(ccp(winSize.width * 0.3, winSize.height * 0.45));
+    titleItem->setPosition(ccp(winSize.width * 0.3, winSize.height * 0.47));
     
     
     CCLabelTTF* titleLabel;
@@ -553,7 +553,7 @@ void MainGameScene::makeResumeDaialog()
     
     
     CCMenuItemImage* returnGameItem = CCMenuItemImage::create("button2.png","button2.png" ,this, menu_selector(MainGameScene::returnMainGame));
-    returnGameItem->setPosition(ccp(winSize.width * 0.7, winSize.height * 0.45));
+    returnGameItem->setPosition(ccp(winSize.width * 0.7, winSize.height * 0.47));
     
     CCLabelTTF* returnGameLabel;
     returnGameLabel = CCLabelTTF::create("CANCLE", "Arial", 30.0);
@@ -562,10 +562,21 @@ void MainGameScene::makeResumeDaialog()
     returnGameLabel->setPosition(ccp(pReturnGameSize.width / 2 ,pReturnGameSize.height / 2));
     returnGameItem->addChild(returnGameLabel);
     returnGameItem->setScale(0.8);
+    
+    CCMenuItemImage* retryGameItem = CCMenuItemImage::create("button3.png","button3.png" ,this, menu_selector(MainGameScene::doRetry));
+    retryGameItem->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.39));
+    
+    CCLabelTTF* retryGameLabel;
+    retryGameLabel = CCLabelTTF::create("RETRY", "Arial", 30.0);
+    
+    CCSize pRetryGameSize = retryGameItem->getContentSize();
+    retryGameLabel->setPosition(ccp(pRetryGameSize.width / 2 ,pRetryGameSize.height / 2));
+    retryGameItem->addChild(retryGameLabel);
+    retryGameItem->setScale(0.8);
 
     
     
-    CCMenu* resumeDialog = CCMenu::create(resumeBG, titleItem, returnGameItem, NULL);
+    CCMenu* resumeDialog = CCMenu::create(resumeBG, titleItem, returnGameItem,retryGameItem,NULL);
     resumeDialog->setPosition(CCPointZero);
     resumeDialog->setTag(tagResumeDialog);
     resumeDialog->setOpacity(0);
@@ -581,8 +592,9 @@ void MainGameScene::tapRetryButton()
 
 void MainGameScene::doRetry()
 {
-    CCScene* newGameScene = (CCScene*)MainGameScene::createWithLevel(m_level);
-    CCDirector::sharedDirector()->replaceScene(newGameScene);
+    CCScene* scene = (CCScene*)MainGameScene::createWithLevel(m_level);
+    CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
+    CCDirector::sharedDirector()->replaceScene(tran);
 }
 
 //クリアしたら、何手かかったかと、ランク表示、もう一回やる,次のレベルに進む　を表示する ...　ResultSceneで

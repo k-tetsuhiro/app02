@@ -230,6 +230,7 @@
 		9D2A4CC61975433500BC5457 /* clear_R.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2A4CC11975433500BC5457 /* clear_R.png */; };
 		9D2A4CCA19754BE100BC5457 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D2A4CC819754BE100BC5457 /* Animation.cpp */; };
 		9D2A4CCD19754C1D00BC5457 /* Tutorial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D2A4CCB19754C1D00BC5457 /* Tutorial.cpp */; };
+		9D3C33931976AFE800D4783E /* button3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C33921976AFE800D4783E /* button3.png */; };
 		9D5239E3195837E10064DC61 /* Arrow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D5239D5195837E10064DC61 /* Arrow.cpp */; };
 		9D5239E4195837E10064DC61 /* ConstCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D5239D7195837E10064DC61 /* ConstCommon.cpp */; };
 		9D5239E5195837E10064DC61 /* LevelSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D5239D9195837E10064DC61 /* LevelSelectScene.cpp */; };
@@ -774,6 +775,7 @@
 		9D2A4CC919754BE100BC5457 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Animation.h; path = ../Classes/Animation.h; sourceTree = "<group>"; };
 		9D2A4CCB19754C1D00BC5457 /* Tutorial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tutorial.cpp; path = ../Classes/Tutorial.cpp; sourceTree = "<group>"; };
 		9D2A4CCC19754C1D00BC5457 /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tutorial.h; path = ../Classes/Tutorial.h; sourceTree = "<group>"; };
+		9D3C33921976AFE800D4783E /* button3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button3.png; sourceTree = "<group>"; };
 		9D5239D5195837E10064DC61 /* Arrow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Arrow.cpp; sourceTree = "<group>"; };
 		9D5239D6195837E10064DC61 /* Arrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arrow.h; sourceTree = "<group>"; };
 		9D5239D7195837E10064DC61 /* ConstCommon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConstCommon.cpp; sourceTree = "<group>"; };
@@ -1864,6 +1866,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9D3C33921976AFE800D4783E /* button3.png */,
 				9D2A4CBD1975433500BC5457 /* clear_A.png */,
 				9D2A4CBE1975433500BC5457 /* clear_C.png */,
 				9D2A4CBF1975433500BC5457 /* clear_E.png */,
@@ -2029,6 +2032,7 @@
 				9D523A21195838420064DC61 /* logo_W.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				9D523A19195838420064DC61 /* logo_A.png in Resources */,
+				9D3C33931976AFE800D4783E /* button3.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
 				9DB46BF11973ECAD00D4C287 /* level_circle_2.png in Resources */,

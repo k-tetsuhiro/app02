@@ -67,7 +67,7 @@ bool ResultScene::initWithParam(int level, int minScore, int resultScore)
     
     
     //今回のスコア
-    CCString* resultScoreStr = CCString::createWithFormat("Touch : %d",resultScore);
+    CCString* resultScoreStr = CCString::createWithFormat("TOUCH : %d",resultScore);
     CCLabelTTF* resultScoreLabel;
     resultScoreLabel = CCLabelTTF::create(resultScoreStr->getCString(), "Arial", 60.0);
     resultScoreLabel->setColor(ccc3(0, 0, 0));
