@@ -283,6 +283,17 @@
 		9DEA5473196D67520021D950 /* Lv1.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DEA5472196D67520021D950 /* Lv1.json */; };
 		9DFB42411977E313001A3487 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFB42401977E313001A3487 /* libGoogleAdMobAds.a */; };
 		9DFB42431977E484001A3487 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFB42421977E484001A3487 /* libcurl.a */; };
+		9DFB424F19780FB3001A3487 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB424419780FB3001A3487 /* Icon-76.png */; };
+		9DFB425019780FB3001A3487 /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB424519780FB3001A3487 /* Icon-120.png */; };
+		9DFB425119780FB3001A3487 /* Icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB424619780FB3001A3487 /* Icon-152.png */; };
+		9DFB425219780FB3001A3487 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB424719780FB3001A3487 /* Icon-Small-50.png */; };
+		9DFB425319780FB3001A3487 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB424819780FB3001A3487 /* Icon-Small-50@2x.png */; };
+		9DFB425419780FB3001A3487 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB424919780FB3001A3487 /* Icon-Small.png */; };
+		9DFB425519780FB3001A3487 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB424A19780FB3001A3487 /* Icon-Small@2x.png */; };
+		9DFB425619780FB3001A3487 /* Icon-Spotlight-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB424B19780FB3001A3487 /* Icon-Spotlight-40.png */; };
+		9DFB425719780FB3001A3487 /* Icon-Spotlight-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB424C19780FB3001A3487 /* Icon-Spotlight-40@2x.png */; };
+		9DFB425819780FB3001A3487 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB424D19780FB3001A3487 /* Icon.png */; };
+		9DFB425919780FB3001A3487 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB424E19780FB3001A3487 /* Icon@2x.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -850,6 +861,17 @@
 		9DFB423F1977E313001A3487 /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADRequestError.h; path = ../other/AdmobSDK/GADRequestError.h; sourceTree = "<group>"; };
 		9DFB42401977E313001A3487 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = ../other/AdmobSDK/libGoogleAdMobAds.a; sourceTree = "<group>"; };
 		9DFB42421977E484001A3487 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
+		9DFB424419780FB3001A3487 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = SOURCE_ROOT; };
+		9DFB424519780FB3001A3487 /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = SOURCE_ROOT; };
+		9DFB424619780FB3001A3487 /* Icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-152.png"; sourceTree = SOURCE_ROOT; };
+		9DFB424719780FB3001A3487 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = SOURCE_ROOT; };
+		9DFB424819780FB3001A3487 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = SOURCE_ROOT; };
+		9DFB424919780FB3001A3487 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = SOURCE_ROOT; };
+		9DFB424A19780FB3001A3487 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = SOURCE_ROOT; };
+		9DFB424B19780FB3001A3487 /* Icon-Spotlight-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-40.png"; sourceTree = SOURCE_ROOT; };
+		9DFB424C19780FB3001A3487 /* Icon-Spotlight-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-40@2x.png"; sourceTree = SOURCE_ROOT; };
+		9DFB424D19780FB3001A3487 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
+		9DFB424E19780FB3001A3487 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -1873,6 +1895,17 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9DFB424419780FB3001A3487 /* Icon-76.png */,
+				9DFB424519780FB3001A3487 /* Icon-120.png */,
+				9DFB424619780FB3001A3487 /* Icon-152.png */,
+				9DFB424719780FB3001A3487 /* Icon-Small-50.png */,
+				9DFB424819780FB3001A3487 /* Icon-Small-50@2x.png */,
+				9DFB424919780FB3001A3487 /* Icon-Small.png */,
+				9DFB424A19780FB3001A3487 /* Icon-Small@2x.png */,
+				9DFB424B19780FB3001A3487 /* Icon-Spotlight-40.png */,
+				9DFB424C19780FB3001A3487 /* Icon-Spotlight-40@2x.png */,
+				9DFB424D19780FB3001A3487 /* Icon.png */,
+				9DFB424E19780FB3001A3487 /* Icon@2x.png */,
 				9D3C33921976AFE800D4783E /* button3.png */,
 				9D2A4CBD1975433500BC5457 /* clear_A.png */,
 				9D2A4CBE1975433500BC5457 /* clear_C.png */,
@@ -1984,6 +2017,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = 42QBEAG94B;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "app02" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2026,6 +2064,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DB46BF21973ECAD00D4C287 /* level_circle_3.png in Resources */,
+				9DFB424F19780FB3001A3487 /* Icon-76.png in Resources */,
+				9DFB425319780FB3001A3487 /* Icon-Small-50@2x.png in Resources */,
+				9DFB425219780FB3001A3487 /* Icon-Small-50.png in Resources */,
 				9DDBD592196EAA430033CB59 /* Lv14.json in Resources */,
 				9D523A20195838420064DC61 /* logo_S.png in Resources */,
 				9D523A11195838420064DC61 /* button1.png in Resources */,
@@ -2034,26 +2075,32 @@
 				9DB46BF31973ECAD00D4C287 /* level_circle_4.png in Resources */,
 				9DDBD57D196EA3AB0033CB59 /* Lv4.json in Resources */,
 				9D523A2B195838420064DC61 /* star.png in Resources */,
+				9DFB425619780FB3001A3487 /* Icon-Spotlight-40.png in Resources */,
 				9DDBD58B196EAA430033CB59 /* Lv7.json in Resources */,
 				9D2A4CC21975433500BC5457 /* clear_A.png in Resources */,
 				9DDBD589196EAA430033CB59 /* Lv5.json in Resources */,
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				9D523A14195838420064DC61 /* Marker Felt.ttf in Resources */,
 				9D523A21195838420064DC61 /* logo_W.png in Resources */,
+				9DFB425819780FB3001A3487 /* Icon.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				9D523A19195838420064DC61 /* logo_A.png in Resources */,
 				9D3C33931976AFE800D4783E /* button3.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
+				9DFB425519780FB3001A3487 /* Icon-Small@2x.png in Resources */,
 				9DB46BF11973ECAD00D4C287 /* level_circle_2.png in Resources */,
 				9DDBD58E196EAA430033CB59 /* Lv10.json in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				9DEA5473196D67520021D950 /* Lv1.json in Resources */,
+				9DFB425119780FB3001A3487 /* Icon-152.png in Resources */,
 				9DDBD590196EAA430033CB59 /* Lv12.json in Resources */,
+				9DFB425419780FB3001A3487 /* Icon-Small.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
 				9D2A4CC31975433500BC5457 /* clear_C.png in Resources */,
 				9D523A10195838420064DC61 /* button_on.png in Resources */,
 				9DDBD593196EAA430033CB59 /* Lv15.json in Resources */,
+				9DFB425919780FB3001A3487 /* Icon@2x.png in Resources */,
 				9D523A1E195838420064DC61 /* logo_R.png in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
 				9DDBD57B196EA3AB0033CB59 /* Lv2.json in Resources */,
@@ -2064,7 +2111,9 @@
 				9D2A4CC41975433500BC5457 /* clear_E.png in Resources */,
 				9D2A4CC61975433500BC5457 /* clear_R.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
+				9DFB425719780FB3001A3487 /* Icon-Spotlight-40@2x.png in Resources */,
 				9DDBD58C196EAA430033CB59 /* Lv8.json in Resources */,
+				9DFB425019780FB3001A3487 /* Icon-120.png in Resources */,
 				9DDBD591196EAA430033CB59 /* Lv13.json in Resources */,
 				9D523A13195838420064DC61 /* arial.ttf in Resources */,
 				9D523A2A195838420064DC61 /* reload.png in Resources */,
@@ -2377,8 +2426,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Tetsuhiro Kakuno (42QBEAG94B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tetsuhiro Kakuno (42QBEAG94B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos7.1]" = "iPhone Distribution: Tetsuhiro Kakuno (42QBEAG94B)";
 				COPY_PHASE_STRIP = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2416,8 +2466,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = app02;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "7E0334D3-D649-4A70-B17E-387071730F5D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7E0334D3-D649-4A70-B17E-387071730F5D";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
