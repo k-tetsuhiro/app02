@@ -61,6 +61,8 @@ static AppDelegate s_sharedApplication;
     
     GADRequest *request = [GADRequest request];
     //request.testing = YES; //テスト中の合図。本番ではコメントアウトを。
+    
+    //バナー表示
     [bannerView_ loadRequest:request];
 
     return YES;

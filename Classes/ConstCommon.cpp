@@ -15,7 +15,7 @@ using namespace std;
 string ConstCommon::getHighScoreKey(int level)
 {
     //highScore:Level:m_level;
-    CCString* highScoreKey = CCString::createWithFormat("test:%d",level);
+    CCString* highScoreKey = CCString::createWithFormat("highScore:level:%d",level);
     return highScoreKey->getCString();
 }
 

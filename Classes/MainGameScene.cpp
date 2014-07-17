@@ -564,7 +564,7 @@ void MainGameScene::makeResumeDaialog()
     returnGameItem->setScale(0.8);
     
     CCMenuItemImage* retryGameItem = CCMenuItemImage::create("button3.png","button3.png" ,this, menu_selector(MainGameScene::doRetry));
-    retryGameItem->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.39));
+    retryGameItem->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.41));
     
     CCLabelTTF* retryGameLabel;
     retryGameLabel = CCLabelTTF::create("RETRY", "Arial", 30.0);
