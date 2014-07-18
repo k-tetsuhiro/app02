@@ -11,36 +11,36 @@ obj/local/armeabi/objs/cocos_extension_static/CocoStudio/Trigger/TriggerObj.o: \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/include/ccConfig.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/platform/CCPlatformConfig.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/platform/android/CCPlatformDefine.h \
- /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/android/log.h \
+ /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/android/log.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/sources/cxx-stl/gnu-libstdc++/4.6/include/string \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/cocoa/CCGeometry.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/cocoa/CCObject.h \
- /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/math.h \
+ /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/math.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/actions/CCActionInterval.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/base_nodes/CCNode.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/include/ccMacros.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/platform/CCCommon.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/platform/CCPlatformMacros.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/platform/android/CCStdC.h \
- /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/stdlib.h \
- /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/alloca.h \
- /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/strings.h \
- /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/memory.h \
+ /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/stdlib.h \
+ /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/alloca.h \
+ /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/strings.h \
+ /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/memory.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/cocoa/CCAffineTransform.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/cocoa/CCGeometry.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/cocoa/CCArray.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/support/data_support/ccCArray.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/platform/android/CCGL.h \
- /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/GLES2/gl2platform.h \
- /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/KHR/khrplatform.h \
- /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/GLES2/gl2.h \
- /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/GLES2/gl2ext.h \
+ /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/GLES2/gl2platform.h \
+ /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/KHR/khrplatform.h \
+ /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/GLES2/gl2.h \
+ /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/GLES2/gl2ext.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/shaders/ccGLStateCache.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/shaders/CCGLProgram.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/kazmath/include/kazmath/kazmath.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/kazmath/include/kazmath/vec2.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/kazmath/include/kazmath/vec3.h \
- /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/assert.h \
+ /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/assert.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/kazmath/include/kazmath/mat3.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/kazmath/include/kazmath/utility.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/kazmath/include/kazmath/mat4.h \
@@ -66,7 +66,7 @@ obj/local/armeabi/objs/cocos_extension_static/CocoStudio/Trigger/TriggerObj.o: \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/sprite_nodes/CCAnimation.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/cocoa/CCDictionary.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/support/data_support/uthash.h \
- /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/inttypes.h \
+ /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/inttypes.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/cocoa/CCArray.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/cocoa/CCString.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/sources/cxx-stl/gnu-libstdc++/4.6/include/functional \
@@ -212,8 +212,8 @@ obj/local/armeabi/objs/cocos_extension_static/CocoStudio/Trigger/TriggerObj.o: \
  /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/sources/cxx-stl/gnu-libstdc++/4.6/include/cassert \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../extensions/CocoStudio/Trigger/../Json/rapidjson/internal/pow10.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../extensions/CocoStudio/Trigger/../Json/rapidjson/internal/stack.h \
- /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/setjmp.h \
- /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/machine/setjmp.h \
+ /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/setjmp.h \
+ /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/machine/setjmp.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../extensions/CocoStudio/Trigger/../Json/rapidjson/internal/strfunc.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../extensions/CocoStudio/Trigger/ObjectFactory.h
 
@@ -239,7 +239,7 @@ obj/local/armeabi/objs/cocos_extension_static/CocoStudio/Trigger/TriggerObj.o: \
 
 /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/platform/android/CCPlatformDefine.h:
 
-/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/android/log.h:
+/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/android/log.h:
 
 /Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/sources/cxx-stl/gnu-libstdc++/4.6/include/string:
 
@@ -247,7 +247,7 @@ obj/local/armeabi/objs/cocos_extension_static/CocoStudio/Trigger/TriggerObj.o: \
 
 /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/cocoa/CCObject.h:
 
-/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/math.h:
+/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/math.h:
 
 /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/actions/CCActionInterval.h:
 
@@ -261,13 +261,13 @@ obj/local/armeabi/objs/cocos_extension_static/CocoStudio/Trigger/TriggerObj.o: \
 
 /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/platform/android/CCStdC.h:
 
-/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/stdlib.h:
+/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/stdlib.h:
 
-/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/alloca.h:
+/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/alloca.h:
 
-/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/strings.h:
+/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/strings.h:
 
-/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/memory.h:
+/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/memory.h:
 
 /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/cocoa/CCAffineTransform.h:
 
@@ -279,13 +279,13 @@ obj/local/armeabi/objs/cocos_extension_static/CocoStudio/Trigger/TriggerObj.o: \
 
 /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/platform/android/CCGL.h:
 
-/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/GLES2/gl2platform.h:
+/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/GLES2/gl2platform.h:
 
-/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/KHR/khrplatform.h:
+/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/KHR/khrplatform.h:
 
-/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/GLES2/gl2.h:
+/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/GLES2/gl2.h:
 
-/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/GLES2/gl2ext.h:
+/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/GLES2/gl2ext.h:
 
 /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/shaders/ccGLStateCache.h:
 
@@ -297,7 +297,7 @@ obj/local/armeabi/objs/cocos_extension_static/CocoStudio/Trigger/TriggerObj.o: \
 
 /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/kazmath/include/kazmath/vec3.h:
 
-/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/assert.h:
+/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/assert.h:
 
 /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/kazmath/include/kazmath/mat3.h:
 
@@ -349,7 +349,7 @@ obj/local/armeabi/objs/cocos_extension_static/CocoStudio/Trigger/TriggerObj.o: \
 
 /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/support/data_support/uthash.h:
 
-/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/inttypes.h:
+/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/inttypes.h:
 
 /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/cocoa/CCArray.h:
 
@@ -641,9 +641,9 @@ obj/local/armeabi/objs/cocos_extension_static/CocoStudio/Trigger/TriggerObj.o: \
 
 /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../extensions/CocoStudio/Trigger/../Json/rapidjson/internal/stack.h:
 
-/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/setjmp.h:
+/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/setjmp.h:
 
-/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-8/arch-arm/usr/include/machine/setjmp.h:
+/Users/k_tetsuhiro/Documents/iPhoneDev/android-ndk-r9d/platforms/android-15/arch-arm/usr/include/machine/setjmp.h:
 
 /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../extensions/CocoStudio/Trigger/../Json/rapidjson/internal/strfunc.h:
 

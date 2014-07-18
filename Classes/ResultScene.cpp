@@ -9,16 +9,13 @@
 #include "ResultScene.h"
 #include "ConstCommon.h"
 #include "MainGameScene.h"
+#include "TitleScene.h"
 
 USING_NS_CC;
 using namespace std;
 
-/*
-CCScene* ResultScene::scene()
-{
-    return ResultScene::sceneWithParam(1);
-}
- */
+//const
+int ResultScene::max_level = 15;
 
 
 CCScene* ResultScene::sceneWithParam(int level, int minScore, int resultScore)
@@ -50,7 +47,7 @@ bool ResultScene::initWithParam(int level, int minScore, int resultScore)
 {
     
     // 初期化色を変更
-    if (!CCLayerColor::initWithColor(ccc4(255, 255, 255, 255))) //RGBA
+    if (!CCLayerColor::initWithColor(ccc4(0xF8,0xEC,0xDE,0xFF))) //RGBA
     {
         return false;
     }
@@ -70,7 +67,7 @@ bool ResultScene::initWithParam(int level, int minScore, int resultScore)
     
     
     //今回のスコア
-    CCString* resultScoreStr = CCString::createWithFormat("Touch : %d",resultScore);
+    CCString* resultScoreStr = CCString::createWithFormat("TOUCH : %d",resultScore);
     CCLabelTTF* resultScoreLabel;
     resultScoreLabel = CCLabelTTF::create(resultScoreStr->getCString(), "Arial", 60.0);
     resultScoreLabel->setColor(ccc3(0, 0, 0));
@@ -89,7 +86,7 @@ bool ResultScene::initWithParam(int level, int minScore, int resultScore)
     
     if(minScore >= resultScore){
         rank = 3;
-    }else if( minScore >= resultScore + 3){
+    }else if( minScore >= resultScore + 8){
         rank = 2;
     }else{
         rank = 1;
@@ -120,7 +117,11 @@ bool ResultScene::initWithParam(int level, int minScore, int resultScore)
     
     //次のレベルへ
     CCMenuItemImage* pNextLevelItem;
-    pNextLevelItem = CCMenuItemImage::create("next.png", "next.png",this,menu_selector(ResultScene::nextLevelGame));
+    if (m_level == max_level){
+        pNextLevelItem = CCMenuItemImage::create("next.png", "next.png",this,menu_selector(ResultScene::showTitleMenu));
+    }else{
+        pNextLevelItem = CCMenuItemImage::create("next.png", "next.png",this,menu_selector(ResultScene::nextLevelGame));
+    }
     pNextLevelItem->setScale(0.3);
     pNextLevelItem->setPosition(ccp(winSize.width * 0.7, winSize.height * 0.3));
     
@@ -144,6 +145,14 @@ void ResultScene::replayGame()
 void ResultScene::nextLevelGame()
 {
     CCScene* scene = MainGameScene ::sceneWithLevel(m_level+1);
+    CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
+    CCDirector::sharedDirector()->replaceScene(tran);
+    
+}
+
+void ResultScene::showTitleMenu()
+{
+    CCScene* scene = TitleScene::scene();
     CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
     CCDirector::sharedDirector()->replaceScene(tran);
     

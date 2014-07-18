@@ -20,17 +20,6 @@ Arrow* Arrow::create()
         return arrowObj;
     }
     return NULL;
-    
-    /*
-    CCSprite *pobSprite = new CCSprite();
-    if (pobSprite && pobSprite->initWithFile(pszFileName))
-    {
-        pobSprite->autorelease();
-        return pobSprite;
-    }
-    CC_SAFE_DELETE(pobSprite);
-    return NULL;
-     */
 }
 
 

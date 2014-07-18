@@ -13,6 +13,8 @@
 #include "TitleScene.h"
 #include "Util.h"
 #include "ConstCommon.h"
+#include "GameData.h"
+#include "Animation.h"
 
 USING_NS_CC;
 using namespace std;
@@ -48,36 +50,18 @@ MainGameScene* MainGameScene::createWithLevel(int level)
     }
 }
 
-/*
- MainGameScene* MainGameScene::create()
- {
- MainGameScene *pRet = new MainGameScene();
- if (pRet && pRet->init())
- {
- pRet->autorelease();
- return pRet;
- }
- else
- {
- delete pRet;
- pRet = NULL;
- return NULL;
- }
- 
- }
- */
 
 bool MainGameScene::initWithLevel(int level)
 {
     
     // 初期化色を変更
-    if (!CCLayerColor::initWithColor(ccc4(255, 255, 255, 255))) //RGBA
+    if (!CCLayerColor::initWithColor(ccc4(0xF1,0xF1,0xF2,0xFF))) //RGBA
     {
         return false;
     }
     
     //初期化に関するものを書く
-     m_level = level;
+    m_level = level;
     
     totalGameCount = 0;
     
@@ -96,29 +80,14 @@ bool MainGameScene::initWithLevel(int level)
     setTouchEnabled(false);
     setTouchMode(kCCTouchesOneByOne);
     
-    //乱数初期化
-    srand((unsigned int)time(NULL));
-    
-    //背景表示
-    //showBackgroud();
-    
     //矢印を配置
     makeArrows();
-    
-    //ゲーム時間を表示
-    //showGametimeLabel();
     
     //ゲーム手数表示
     showGameCountLabel();
     
-    //最小手数表示
-    //showMinimamCount();
-    
     //リトライボタン表示
     makeRetryButton();
-    
-    //クリアダイアログ作成
-    //makeClearDaialog();
     
     //一時中断ダイアログ作成
     makeResumeDaialog();
@@ -142,22 +111,29 @@ void MainGameScene::showBackgroud()
 void MainGameScene::makeArrows()
 {
     
+    //GameDataの読み込み
+    CCString* jsonFileName = CCString::createWithFormat("Lv%d.json",m_level);
+    GameData* gm = new GameData(jsonFileName->getCString());
+    
     //prefix Lv1_
     stringstream ss;
     ss << "lv" << m_level << "_";
     
-    int *arrowDirection = Util::makeArrayDataByCsv(ss.str()+"direction.csv");
-    int *arrowFront = Util::makeArrayDataByCsv(ss.str()+"front.csv");
-    int *arrowSmallestNum = Util::makeArrayDataByCsv(ss.str()+"smallest_num.csv");
-    minimamCount = *arrowSmallestNum;
-    CCLOG("min:%d",minimamCount);
+    //矢印の方向
+    int *arrowDirection = gm->getDirectionArray();
     
+    //矢印の方向
+    int *arrowFront = gm->getFrontArray();
+
+    //最小手数
+    minimamCount = gm->getMinScore();
     
     
     // higscorekey:m_level
-    stringstream ss2;
-    ss2 << ":" << m_level;
-    highScoreKey = ConstCommon::HIGH_SCORE_KEY+ss2.str();
+    highScoreKey = ConstCommon::getHighScoreKey(m_level);
+    
+    //totalGameCount
+    totalAllGameCountKey = ConstCommon::getTotalAllGameCountKey();
 
 
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
@@ -186,7 +162,6 @@ void MainGameScene::makeArrows()
             pArrowOn->setPosition(ccp( ((winSize.width - arrowOnSize.width * COL_NUM) / 2) + (arrowOnSize.width / 2 ) + (col - 1) * arrowOnSize.width  ,
                                       ((winSize.height - arrowOnSize.height * ROW_NUM) / 2) + (arrowOnSize.height / 2 ) + (row - 1) * arrowOnSize.height
                                       ));
-            CCLog("front:%d",arrowFront[index -1]);
             if(arrowFront[index - 1] == 1){
                 arrowObj->onFrontArrowSprite(pArrowOff);
             }else{
@@ -233,7 +208,10 @@ void MainGameScene::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEv
             if(arrowRect.containsPoint(touchPoint)){
                 
                 //タッチ数を更新して表示
-                totalGameCount++;
+                if(totalGameCount < 99){
+                    totalGameCount++;
+                }
+                
                 showGameCountLabel();
                 
                 //z-indexあげる
@@ -341,18 +319,20 @@ void MainGameScene::endJudgemnet()
     //終了
     endFlag = true;
     
-    //時間計測終了
-    //this->unschedule(schedule_selector(MainGameScene::measureGameTime));
-    
     //ハイスコアであれば保持
     CCUserDefault* userDefault = CCUserDefault::sharedUserDefault();
     
     int highScore = userDefault->getFloatForKey(highScoreKey.c_str(),ConstCommon::DEFAULT_HIGH_SCORE_NUM);
-    
     if( highScore > totalGameCount){
         isHighScore = true;
         userDefault->setFloatForKey(highScoreKey.c_str(), totalGameCount);
     }
+    
+    //ゲーム回数を記録
+    int totalAllGameCount = userDefault->getFloatForKey(totalAllGameCountKey.c_str(),0);
+    userDefault->setFloatForKey(totalAllGameCountKey.c_str(), totalAllGameCount+1);
+    
+    
     
     //終了アニメーション
     this->endAnimation();
@@ -387,12 +367,41 @@ void MainGameScene::endAnimation()
     
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
     
-    CCSprite* pClear = CCSprite::create("logo_clear.png");
-    pClear->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.5));
-    pClear->setScale(1.5f);
-    pClear->setZOrder(Z_ORDER_CLEAR_DIALOG);
-    this->addChild(pClear);
-   
+    CCSprite* pC = CCSprite::create("clear_C.png");
+    pC->setPosition(ccp(winSize.width * 0.1, winSize.height * 0.6));
+    pC->setScale(0.0);
+    pC->setZOrder(Z_ORDER_CLEAR_DIALOG);
+    pC->runAction(CCSequence::create(CCDelayTime::create(0.1),Animation::clearCharaAction(),NULL));
+    this->addChild(pC);
+    
+    CCSprite* pL = CCSprite::create("clear_L.png");
+    pL->setPosition(ccp(winSize.width * 0.3, winSize.height * 0.6));
+    pL->setScale(0.0);
+    pL->setZOrder(Z_ORDER_CLEAR_DIALOG);
+    pL->runAction(CCSequence::create(CCDelayTime::create(0.3),Animation::clearCharaAction(),NULL));
+    this->addChild(pL);
+    
+    CCSprite* pE = CCSprite::create("clear_E.png");
+    pE->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.6));
+    pE->setScale(0.0);
+    pE->setZOrder(Z_ORDER_CLEAR_DIALOG);
+    pE->runAction(CCSequence::create(CCDelayTime::create(0.5),Animation::clearCharaAction(),NULL));
+    this->addChild(pE);
+    
+    CCSprite* pA = CCSprite::create("clear_A.png");
+    pA->setPosition(ccp(winSize.width * 0.7, winSize.height * 0.6));
+    pA->setScale(0.0);
+    pA->setZOrder(Z_ORDER_CLEAR_DIALOG);
+    pA->runAction(CCSequence::create(CCDelayTime::create(0.7),Animation::clearCharaAction(),NULL));
+    this->addChild(pA);
+    
+    CCSprite* pR = CCSprite::create("clear_R.png");
+    pR->setPosition(ccp(winSize.width * 0.9, winSize.height * 0.6));
+    pR->setScale(0.0);
+    pR->setZOrder(Z_ORDER_CLEAR_DIALOG);
+    pR->runAction(CCSequence::create(CCDelayTime::create(0.9),Animation::clearCharaAction(),NULL));
+    this->addChild(pR);
+
     
     
 }
@@ -410,14 +419,6 @@ void MainGameScene::showGameCountLabel()
              countLabel->setString(countString->getCString());
             return;
         }
-    /*
-    }
-
-    CCLabelTTF* countLabel = (CCLabelTTF*)this->getChildByTag(tagGameCountLavel);
-    if(countLabel){
-        CCLOG("in");
-        countLabel->setString(countString->getCString());
-     */
     }else{
         CCSize winSize = CCDirector::sharedDirector()->getWinSize();
         
@@ -493,7 +494,6 @@ void MainGameScene::makeRetryButton()
     CCSize pRetryItemSize = retryItem->getContentSize();
     retryItem->setPosition(ccp( pRetryItemSize.width * 0.4, winSize.height - pRetryItemSize.height * 0.4));
     
-    //retryItem->setPosition(ccp(winSize.width * 0.05, winSize.height * 0.95));
     CCMenu* retryButton = CCMenu::create(retryItem,NULL);
     retryButton->setPosition(CCPointZero);
     retryButton->setTag(tagRetryButton);
@@ -525,8 +525,8 @@ void MainGameScene::makeResumeDaialog()
     
     
     //CCSpriteで作ると、タッチ判定無効とかめんどくさいからBGもMenuItemで作る
-    CCMenuItemImage* resumeBG = CCMenuItemImage::create("logo_Info.png","logo_Info.png");
-    resumeBG->setScale(0.6);
+    CCMenuItemImage* resumeBG = CCMenuItemImage::create("logo_Info2.png","logo_Info2.png");
+    resumeBG->setScale(0.7);
     resumeBG->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.5));
     resumeBG->setEnabled(false);
     
@@ -539,7 +539,7 @@ void MainGameScene::makeResumeDaialog()
    
     
     CCMenuItemImage* titleItem = CCMenuItemImage::create("button1.png","button1.png" ,this, menu_selector(MainGameScene::tapTitleButton));
-    titleItem->setPosition(ccp(winSize.width * 0.3, winSize.height * 0.45));
+    titleItem->setPosition(ccp(winSize.width * 0.3, winSize.height * 0.47));
     
     
     CCLabelTTF* titleLabel;
@@ -553,19 +553,30 @@ void MainGameScene::makeResumeDaialog()
     
     
     CCMenuItemImage* returnGameItem = CCMenuItemImage::create("button2.png","button2.png" ,this, menu_selector(MainGameScene::returnMainGame));
-    returnGameItem->setPosition(ccp(winSize.width * 0.7, winSize.height * 0.45));
+    returnGameItem->setPosition(ccp(winSize.width * 0.7, winSize.height * 0.47));
     
     CCLabelTTF* returnGameLabel;
-    returnGameLabel = CCLabelTTF::create("BACK", "Arial", 30.0);
+    returnGameLabel = CCLabelTTF::create("CANCEL", "Arial", 30.0);
     
     CCSize pReturnGameSize = returnGameItem->getContentSize();
     returnGameLabel->setPosition(ccp(pReturnGameSize.width / 2 ,pReturnGameSize.height / 2));
     returnGameItem->addChild(returnGameLabel);
     returnGameItem->setScale(0.8);
+    
+    CCMenuItemImage* retryGameItem = CCMenuItemImage::create("button3.png","button3.png" ,this, menu_selector(MainGameScene::doRetry));
+    retryGameItem->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.41));
+    
+    CCLabelTTF* retryGameLabel;
+    retryGameLabel = CCLabelTTF::create("RETRY", "Arial", 30.0);
+    
+    CCSize pRetryGameSize = retryGameItem->getContentSize();
+    retryGameLabel->setPosition(ccp(pRetryGameSize.width / 2 ,pRetryGameSize.height / 2));
+    retryGameItem->addChild(retryGameLabel);
+    retryGameItem->setScale(0.8);
 
     
     
-    CCMenu* resumeDialog = CCMenu::create(resumeBG, titleItem, returnGameItem, NULL);
+    CCMenu* resumeDialog = CCMenu::create(resumeBG, titleItem, returnGameItem,retryGameItem,NULL);
     resumeDialog->setPosition(CCPointZero);
     resumeDialog->setTag(tagResumeDialog);
     resumeDialog->setOpacity(0);
@@ -581,8 +592,9 @@ void MainGameScene::tapRetryButton()
 
 void MainGameScene::doRetry()
 {
-    CCScene* newGameScene = (CCScene*)MainGameScene::createWithLevel(m_level);
-    CCDirector::sharedDirector()->replaceScene(newGameScene);
+    CCScene* scene = (CCScene*)MainGameScene::createWithLevel(m_level);
+    CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
+    CCDirector::sharedDirector()->replaceScene(tran);
 }
 
 //クリアしたら、何手かかったかと、ランク表示、もう一回やる,次のレベルに進む　を表示する ...　ResultSceneで
@@ -591,15 +603,6 @@ void MainGameScene::showClearDialog()
     CCScene* newGameScene = (CCScene*)ResultScene::createWithParam(m_level, minimamCount, totalGameCount);
     CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, newGameScene);
     CCDirector::sharedDirector()->replaceScene(tran);
-    
-    /*
-    CCMenu* clearDialog = (CCMenu*)this->getChildByTag(tagClearDialog);
-    if(clearDialog){
-        clearDialog->setOpacity(255);
-        clearDialog->setEnabled(true);
-    }
-     */
-
 }
 
 void MainGameScene::showResumeDialog()
@@ -628,7 +631,6 @@ void MainGameScene::returnMainGame()
 void MainGameScene::tapTitleButton()
 {
     CCScene* scene = TitleScene ::scene();
-    //CCTransitionJumpZoom* tran = CCTransitionJumpZoom::create(1, scene);
     CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
     CCDirector::sharedDirector()->replaceScene(tran);
     
@@ -639,9 +641,9 @@ void MainGameScene::showStartInfo()
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
     
     CCMenuItemImage* pStartItem;
-    pStartItem = CCMenuItemImage::create("logo_Info.png", "logo_Info.png",this,menu_selector(MainGameScene::startGame));
+    pStartItem = CCMenuItemImage::create("logo_Info2.png", "logo_Info2.png",this,menu_selector(MainGameScene::startGame));
     pStartItem->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.5));
-    pStartItem->setScale(0.6);
+    pStartItem->setScale(0.7);
      CCSize pStartItemSize = pStartItem->getContentSize();
     
     CCLabelTTF* startLabel1;
@@ -659,9 +661,9 @@ void MainGameScene::showStartInfo()
 
 
     
-    CCString* minCountString = CCString::createWithFormat("min  %d  Touch",minimamCount);
+    CCString* minCountString = CCString::createWithFormat("MIN  %d  TOUCH",minimamCount);
     CCLabelTTF* startLabel2;
-    startLabel2 = CCLabelTTF::create(minCountString->getCString(), "Arial", 50.0);
+    startLabel2 = CCLabelTTF::create(minCountString->getCString(), "Copperplate", 50.0);
     startLabel2->setColor(ccc3(0, 0, 0));
     startLabel2->setPosition(ccp(pStartItemSize.width * 0.5 ,pStartItemSize.height * 0.2));
     pStartItem->addChild(startLabel2);
@@ -744,19 +746,13 @@ void MainGameScene::startGame()
     if(startInfo){
         this->removeChild(startInfo);
     }
-
     
-    //タイマー開始
-    //this->schedule(schedule_selector(MainGameScene::measureGameTime));
 }
 
 
 
 void MainGameScene::onEnterTransitionDidFinish()
 {
-    //カウントダウン開始
-    //showCountDown();
-    
     //メニュー表示
     showStartInfo();
 

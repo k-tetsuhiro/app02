@@ -10,6 +10,8 @@
 #include "cocos2d.h"
 #include "LevelSelectScene.h"
 #include "ConstCommon.h"
+#include "Animation.h"
+#include "Tutorial.h"
 
 
 USING_NS_CC;
@@ -24,81 +26,50 @@ CCScene* TitleScene::scene(){
 
 bool TitleScene::init()
 {
-    /*
-    if(!CCLayer::init()){
-        return false;
-    }
-     */
     
     // 初期化色を変更
-    //if (!CCLayerColor::initWithColor(ccc4(83, 166, 103, 255))) //RGBA
-    if (!CCLayerColor::initWithColor(ccc4(255, 254, 223, 255))) //RGBA
+    if (!CCLayerColor::initWithColor(ccc4(0xF8,0xEC,0xDE,0xFF))) //RGBA
     {
         return false;
     }
     
     srand((unsigned)time(NULL));
     CCSize size = CCDirector::sharedDirector()->getWinSize();
-    /*
-    //BG start
-    if(!SimpleAudioEngine::sharedEngine()->isBackgroundMusicPlaying()){
-        SimpleAudioEngine::sharedEngine()->playBackgroundMusic("titleBgm.mp3", true);
-    }
-    
-    //background
-    CCSprite* pBG = CCSprite::create("title_bg.png");
-    pBG->setPosition(ccp(size.width * 0.5, size.height * 0.5));
-    this->addChild(pBG);
-    
-    CCSize bgSize = pBG->getContentSize();
-    
-    //cat eyes
-    CCSprite* pLeftEye = CCSprite::create("cateye.png");
-    pLeftEye->setPosition(ccp(bgSize.width * 0.43, bgSize.height * 0.28));
-    pLeftEye->runAction(CCRepeatForever::create(CCRotateBy::create(1, 360)));
-    pBG->addChild(pLeftEye);
-    
-    CCSprite* pRightEye = CCSprite::create("cateye.png");
-    pRightEye->setPosition(ccp(bgSize.width * 0.54, bgSize.height * 0.28));
-    pRightEye->runAction(CCRepeatForever::create(CCRotateBy::create(1, 360)));
-    pBG->addChild(pRightEye);
-    */
-    
-    /*
-    //title
-    CCSprite* pTitle = CCSprite::create("title.png");
-    pTitle->setPosition(ccp(size.width * 0.5, size.height * 0.6));
-    this->addChild(pTitle);
-     */
     
     CCSprite* pA = CCSprite::create("logo_A.png");
     pA->setPosition(ccp(size.width * 0.1, size.height * 0.8));
     pA->setScale(0.6);
+    pA->runAction(Animation::titleCharaAction());
     this->addChild(pA);
     
     CCSprite* pR = CCSprite::create("logo_R.png");
-    pR->setPosition(ccp(size.width * 0.27, size.height * 0.8));
+    pR->setPosition(ccp(size.width * 0.26, size.height * 0.8));
     pR->setScale(0.6);
+    pR->runAction(CCSequence::create(CCDelayTime::create(0.05),Animation::titleCharaAction(),NULL));
     this->addChild(pR);
     
     CCSprite* pR2 = CCSprite::create("logo_R.png");
-    pR2->setPosition(ccp(size.width * 0.43, size.height * 0.8));
+    pR2->setPosition(ccp(size.width * 0.42, size.height * 0.8));
     pR2->setScale(0.6);
+    pR2->runAction(CCSequence::create(CCDelayTime::create(0.1),Animation::titleCharaAction(),NULL));
     this->addChild(pR2);
     
     CCSprite* pO = CCSprite::create("logo_O.png");
-    pO->setPosition(ccp(size.width * 0.6, size.height * 0.8));
+    pO->setPosition(ccp(size.width * 0.58, size.height * 0.8));
     pO->setScale(0.6);
+    pO->runAction(CCSequence::create(CCDelayTime::create(0.15),Animation::titleCharaAction(),NULL));
     this->addChild(pO);
     
     CCSprite* pW = CCSprite::create("logo_W.png");
-    pW->setPosition(ccp(size.width * 0.77, size.height * 0.8));
+    pW->setPosition(ccp(size.width * 0.74, size.height * 0.8));
     pW->setScale(0.6);
+    pW->runAction(CCSequence::create(CCDelayTime::create(0.2),Animation::titleCharaAction(),NULL));
     this->addChild(pW);
     
     CCSprite* pS = CCSprite::create("logo_S.png");
     pS->setPosition(ccp(size.width * 0.9, size.height * 0.8));
     pS->setScale(0.6);
+    pS->runAction(CCSequence::create(CCDelayTime::create(0.25),Animation::titleCharaAction(),NULL));
     this->addChild(pS);
 
 
@@ -123,9 +94,6 @@ bool TitleScene::init()
     pMenu->setPosition(CCPointZero);
     this->addChild(pMenu);
     
-    //showHighScore
-    showHighScoreLabel();
-    
     return true;
     
 }
@@ -134,17 +102,19 @@ bool TitleScene::init()
 void TitleScene::menuStartCallback(CCObject *pSender)
 {
     //show game
-    CCScene* scene = LevelSelectScene ::scene();
+    CCUserDefault*  userDefault = CCUserDefault::sharedUserDefault();
+    string totalAllGameCountKey = ConstCommon::getTotalAllGameCountKey();
+    int totalAllGameCount = userDefault->getFloatForKey(totalAllGameCountKey.c_str(),0);
+    
+    CCScene* scene;
+    //3回以下ならチュートリアル表示
+    if(totalAllGameCount <= 2){
+        scene = Tutorial::scene();
+    }else{
+        scene = LevelSelectScene ::scene();
+    }
+    
     CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
     CCDirector::sharedDirector()->replaceScene(tran);
 }
-
-void TitleScene::showHighScoreLabel()
-{
-    CCUserDefault* userDefault = CCUserDefault::sharedUserDefault();
-    
-    float highScore = userDefault->getFloatForKey(ConstCommon::HIGH_SCORE_KEY,99.9);
-    
-}
-
 

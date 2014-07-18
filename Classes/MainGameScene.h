@@ -23,6 +23,7 @@ private:
     float gameTime;
     int minimamCount;
     string highScoreKey;
+    string totalAllGameCountKey;
     bool endFlag;
     bool isHighScore;
     bool isResume;
@@ -64,7 +65,7 @@ private:
     // ##### Z-order ######
     const static int Z_ORDER_ARROW = 100;
     const static int Z_ORDER_RESUME_DIALOG = 200;
-    const static int Z_ORDER_CLEAR_DIALOG = 200;
+    const static int Z_ORDER_CLEAR_DIALOG = 300;
     
     
     

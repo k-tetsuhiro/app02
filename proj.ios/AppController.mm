@@ -50,6 +50,20 @@ static AppDelegate s_sharedApplication;
     [[UIApplication sharedApplication] setStatusBarHidden:true];
     
     cocos2d::CCApplication::sharedApplication()->run();
+    
+    //landscape(横画面)の一番下に広告を表示
+    bannerView_ = [[GADBannerView alloc]initWithAdSize:kGADAdSizeBanner];
+    bannerView_.center = CGPointMake(viewController.view.center.x, viewController.view.frame.size.height-bannerView_.frame.size.height/2);
+    
+    bannerView_.adUnitID = @"ca-app-pub-6097780561233990/7206157066";
+    [viewController.view addSubview: bannerView_];
+    [bannerView_ setRootViewController:viewController];
+    
+    GADRequest *request = [GADRequest request];
+    //request.testing = YES; //テスト中の合図。本番ではコメントアウトを。
+    
+    //バナー表示
+    [bannerView_ loadRequest:request];
 
     return YES;
 }

@@ -2,10 +2,15 @@
 
 @class RootViewController;
 
-@interface AppController : NSObject <UIApplicationDelegate> {
+extern "C"{
+#import "GADBannerView.h"
+};
+
+@interface AppController : NSObject <UIAccelerometerDelegate, UIAlertViewDelegate, UITextFieldDelegate, UIApplicationDelegate>{
     UIWindow *window;
-    RootViewController    *viewController;
+    RootViewController *viewController;
+    
+    GADBannerView *bannerView_;
 }
 
 @end
-
