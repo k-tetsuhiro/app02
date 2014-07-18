@@ -57,6 +57,7 @@ void Tutorial::showScene1()
     
     pMenuScene1 = CCMenu::create(pScene1Item,pScene1Item2,NULL);
     pMenuScene1->setPosition(CCPointZero);
+    pMenuScene1->setScale(winSize.width/640);
     this->addChild(pMenuScene1);
     
     
@@ -116,6 +117,7 @@ void Tutorial::showScene2()
     pScene2Item1->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.5));
     pScene2Item1->setTag(TAG_SCENE_2_ITEM_1);
     
+    
     CCSprite* pArrow1 = CCSprite::create("button_off.png");
     CCMenuItem* pScene2Item2 = CCMenuItem::create();
     pScene2Item2->setPosition(ccp(winSize.width * 0.5 + pArrow1->getContentSize().width , winSize.height * 0.5));
@@ -138,6 +140,7 @@ void Tutorial::showScene2()
     
     pMenuScene2 = CCMenu::create(pScene2Item2,pScene2Item3,pScene1Item4,pScene2Item1,NULL);
     pMenuScene2->setPosition(CCPointZero);
+    pMenuScene2->setScale(winSize.width/640);
     this->addChild(pMenuScene2);
     
     

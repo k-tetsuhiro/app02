@@ -30,6 +30,7 @@ bool LevelSelectScene::init()
     {
         return false;
     }
+    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
     
     //start button
     CCArray* pLevelArr = new CCArray;
@@ -130,6 +131,7 @@ void LevelSelectScene::menuStartCallback(CCObject *pSender)
     CCMenu* resumeDialog = CCMenu::create(startMenuBG, titleItem, returnGameItem, NULL);
     resumeDialog->setPosition(CCPointZero);
     resumeDialog->setTag(tagStartMenuDialog);
+    resumeDialog->setScale(winSize.width/640);
     this->addChild(resumeDialog);
     
    }
@@ -169,7 +171,7 @@ CCMenuItemImage* LevelSelectScene::createLevelImage(int level)
 
     CCMenuItemImage* pLevel;
     pLevel = CCMenuItemImage::create(filePathName->getCString(), filePathName->getCString(),this,menu_selector(LevelSelectScene::menuStartCallback));
-    //pLevel->setScale(0.25);
+    pLevel->setScale(0.25);
     pLevel->setScale( ((size.width * 0.585) / 3) / pLevel->getContentSize().width );
     pLevel->setPosition(ccp(
                             size.width * (((((level - 1) % 3) + 1) * 0.3) - 0.1),
