@@ -118,7 +118,7 @@ void LevelSelectScene::menuStartCallback(CCObject *pSender)
     returnGameItem->setPosition(ccp(winSize.width * 0.7, winSize.height * 0.42));
     
     CCLabelTTF* returnGameLabel;
-    returnGameLabel = CCLabelTTF::create("CANCLE", "Arial", 30.0);
+    returnGameLabel = CCLabelTTF::create("CANCEL", "Arial", 30.0);
     
     CCSize pReturnGameSize = returnGameItem->getContentSize();
     returnGameLabel->setPosition(ccp(pReturnGameSize.width / 2 ,pReturnGameSize.height / 2));

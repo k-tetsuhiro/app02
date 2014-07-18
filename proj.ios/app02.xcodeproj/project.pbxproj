@@ -160,7 +160,6 @@
 		1AB8703C175E0A92005D39BF /* libwebsockets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB8703B175E0A92005D39BF /* libwebsockets.a */; };
 		1AC3624916D4A1E8000847F2 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3624316D4A1E8000847F2 /* AppController.mm */; };
 		1AC3624B16D4A1E8000847F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3624516D4A1E8000847F2 /* main.m */; };
-		1ACB3244164770DE00914215 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACB3243164770DE00914215 /* libcurl.a */; };
 		1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */; };
 		1AFCDA8216D4A25900906EA6 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCDA8116D4A25900906EA6 /* RootViewController.mm */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -642,7 +641,6 @@
 		1AC3624316D4A1E8000847F2 /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppController.mm; sourceTree = SOURCE_ROOT; };
 		1AC3624516D4A1E8000847F2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		1AC3624616D4A1E8000847F2 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = SOURCE_ROOT; };
-		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		1AFAF8B416D35DE700DB1158 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Classes/AppDelegate.h; sourceTree = "<group>"; };
 		1AFCDA8016D4A25900906EA6 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = SOURCE_ROOT; };
@@ -904,7 +902,6 @@
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */,
 				15A3DA6A1682F886002FB0C5 /* libcocos2dx.a in Frameworks */,
-				1ACB3244164770DE00914215 /* libcurl.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				9DFB42411977E313001A3487 /* libGoogleAdMobAds.a in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
@@ -1568,7 +1565,6 @@
 				9DE4C47C1974065500B16E90 /* StoreKit.framework */,
 				9DE4C47A1974063D00B16E90 /* SystemConfiguration.framework */,
 				9DE4C4781974063800B16E90 /* MessageUI.framework */,
-				1ACB3243164770DE00914215 /* libcurl.a */,
 				BF170DB212928DE900B8313A /* libxml2.dylib */,
 				BF170DB412928DE900B8313A /* libz.dylib */,
 				D44C620F132DFF4E0009C878 /* AudioToolbox.framework */,
@@ -2371,6 +2367,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -2401,7 +2398,7 @@
 					"\"$(SRCROOT)/../../../cocos2dx/platform/ios/Simulation\"",
 				);
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\"",
 					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",
@@ -2416,7 +2413,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "armv6 armv7 i386";
 			};
@@ -2426,9 +2423,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Tetsuhiro Kakuno (42QBEAG94B)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tetsuhiro Kakuno (42QBEAG94B)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos7.1]" = "iPhone Distribution: Tetsuhiro Kakuno (42QBEAG94B)";
 				COPY_PHASE_STRIP = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2455,7 +2452,7 @@
 					"\"$(SRCROOT)/../../../cocos2dx/platform/ios/Simulation\"",
 				);
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\"",
 					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",
@@ -2469,36 +2466,43 @@
 				PROVISIONING_PROFILE = "7E0334D3-D649-4A70-B17E-387071730F5D";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7E0334D3-D649-4A70-B17E-387071730F5D";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv6 armv7 i386";
 			};
 			name = Release;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Release;
 		};
