@@ -17,7 +17,7 @@ USING_NS_CC;
 class Animation
 {
 public:
-    static CCFiniteTimeAction* titleCharaAction();
+    static CCFiniteTimeAction* titleCharaAction(float originSize);
     static CCFiniteTimeAction* clearCharaAction();
     static CCFiniteTimeAction* tutorialArrowTouchAction(CCObject* target, SEL_CallFunc selector);
 };

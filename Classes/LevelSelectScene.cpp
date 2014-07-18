@@ -169,7 +169,8 @@ CCMenuItemImage* LevelSelectScene::createLevelImage(int level)
 
     CCMenuItemImage* pLevel;
     pLevel = CCMenuItemImage::create(filePathName->getCString(), filePathName->getCString(),this,menu_selector(LevelSelectScene::menuStartCallback));
-    pLevel->setScale(0.25);
+    //pLevel->setScale(0.25);
+    pLevel->setScale( ((size.width * 0.585) / 3) / pLevel->getContentSize().width );
     pLevel->setPosition(ccp(
                             size.width * (((((level - 1) % 3) + 1) * 0.3) - 0.1),
                             size.height * (0.9 - (((level - 1) / 3 ) * 0.15))
