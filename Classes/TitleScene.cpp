@@ -28,7 +28,7 @@ bool TitleScene::init()
 {
     
     // 初期化色を変更
-    if (!CCLayerColor::initWithColor(ccc4(0xF8,0xEC,0xDE,0xFF))) //RGBA
+    if (!CCLayerColor::initWithColor(ccc4(0xFF,0xEF,0xFF,0xFF))) //RGBA
     {
         return false;
     }
