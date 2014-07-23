@@ -8,12 +8,12 @@
 
 #include "Animation.h"
 
-CCFiniteTimeAction* Animation::titleCharaAction()
+CCFiniteTimeAction* Animation::titleCharaAction(float originSize)
 {
     CCDelayTime* delay1 = CCDelayTime::create(1.3);
-    CCScaleTo* scaleUp = CCScaleTo::create(0.2, 1.0);
+    CCScaleTo* scaleUp = CCScaleTo::create(0.2, originSize * 2);
     CCDelayTime* delay2 = CCDelayTime::create(0.1);
-    CCScaleTo* scaleDown = CCScaleTo::create(0.2, 0.6);
+    CCScaleTo* scaleDown = CCScaleTo::create(0.2, originSize);
     
     return CCSequence::create(delay1, scaleUp, delay2, scaleDown, NULL);
 }
