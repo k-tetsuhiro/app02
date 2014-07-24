@@ -33,7 +33,20 @@ bool TitleScene::init()
         return false;
     }
     
-    srand((unsigned)time(NULL));
+    //show game
+    CCUserDefault*  userDefault = CCUserDefault::sharedUserDefault();
+    string totalAllGameCountKey = ConstCommon::getTotalAllGameCountKey();
+    int totalAllGameCount = userDefault->getFloatForKey(totalAllGameCountKey.c_str(),0);
+    
+    CCScene* scene;
+    //一回もクリアしたことなければチュートリアル表示
+    if(totalAllGameCount <= 1){
+        this->fristTimeGame = true;
+    }else{
+        this->fristTimeGame = false;
+    }
+
+    
     CCSize size = CCDirector::sharedDirector()->getWinSize();
     
     CCSprite* pA = CCSprite::create("logo_A.png");
@@ -103,6 +116,30 @@ bool TitleScene::init()
     pMenu->setPosition(CCPointZero);
     this->addChild(pMenu);
     
+    
+    if(! this->fristTimeGame){
+        //チュートリアルを再度受けられるようにボタン生成
+        //start button
+        CCMenuItemImage* pTutorItem;
+        pTutorItem = CCMenuItemImage::create("button2.png", "button2.png",this,menu_selector(TitleScene::menuTutorCallback));
+        pTutorItem->setPosition(ccp(size.width * 0.5, size.height * 0.4));
+        pTutorItem->setScale((size.width * 0.4) / pTutorItem->getContentSize().width);
+        
+        CCLabelTTF* tutorLabel;
+        tutorLabel = CCLabelTTF::create("TUTORIAL", "Arial", 30.0);
+        
+        CCSize pTutorItemSize = pTutorItem->getContentSize();
+        tutorLabel->setPosition(ccp(pTutorItemSize.width / 2 ,pTutorItemSize.height / 2));
+        pTutorItem->addChild(tutorLabel);
+        
+        
+        
+        CCMenu* pMenu2 = CCMenu::create(pTutorItem,NULL);
+        pMenu2->setPosition(CCPointZero);
+        this->addChild(pMenu2);
+
+    }
+    
     return true;
     
 }
@@ -110,19 +147,24 @@ bool TitleScene::init()
 
 void TitleScene::menuStartCallback(CCObject *pSender)
 {
-    //show game
-    CCUserDefault*  userDefault = CCUserDefault::sharedUserDefault();
-    string totalAllGameCountKey = ConstCommon::getTotalAllGameCountKey();
-    int totalAllGameCount = userDefault->getFloatForKey(totalAllGameCountKey.c_str(),0);
     
     CCScene* scene;
-    //3回以下ならチュートリアル表示
-    if(totalAllGameCount <= 2){
+    //一回もクリアしたことなければチュートリアル表示
+    if(this->fristTimeGame){
         scene = Tutorial::scene();
     }else{
         scene = LevelSelectScene ::scene();
     }
     
+    CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
+    CCDirector::sharedDirector()->replaceScene(tran);
+}
+
+void TitleScene::menuTutorCallback(CCObject *pSender)
+{
+    
+    CCScene* scene;
+    scene = Tutorial::scene();
     CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
     CCDirector::sharedDirector()->replaceScene(tran);
 }
