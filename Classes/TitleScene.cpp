@@ -38,7 +38,6 @@ bool TitleScene::init()
     string totalAllGameCountKey = ConstCommon::getTotalAllGameCountKey();
     int totalAllGameCount = userDefault->getFloatForKey(totalAllGameCountKey.c_str(),0);
     
-    CCScene* scene;
     //一回もクリアしたことなければチュートリアル表示
     if(totalAllGameCount <= 1){
         this->fristTimeGame = true;
