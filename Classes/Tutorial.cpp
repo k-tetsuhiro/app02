@@ -22,10 +22,30 @@ CCScene* Tutorial::scene(){
 bool Tutorial::init()
 {
     // 初期化色を変更
-    if (!CCLayerColor::initWithColor(ccc4(0xF8,0xEC,0xDE,0xFF))) //RGBA
+    if (!CCLayerColor::initWithColor(ccc4(0xD6,0xFF,0xFF,0xFF))) //RGBA
     {
         return false;
     }
+    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+    
+    //TUTORIAL
+    CCSprite* pTutor = CCSprite::create("logo_tutorial.png");
+    pTutor->setPosition(ccp(-pTutor->getContentSize().width, winSize.height * 0.5));
+    pTutor->setRotation(330);
+    CCDelayTime* delay1 = CCDelayTime::create(1.0);
+    CCMoveTo* move1 = CCMoveTo::create(1.0f, ccp(winSize.width * 0.3, winSize.height * 0.95));
+    pTutor->runAction(CCSequence::create(delay1,move1,NULL));
+   
+    
+    
+    CCString* totorialStr = CCString::createWithFormat("TUTORIAL");
+    CCLabelTTF* tutorialLabel = CCLabelTTF::create(totorialStr->getCString(), "Copperplate", 55.0);
+    tutorialLabel->setColor(ccc3(255, 255, 255));
+    tutorialLabel->setPosition(ccp(pTutor->getContentSize().width * 0.40, pTutor->getContentSize().height * 0.5));
+    
+    pTutor->addChild(tutorialLabel);
+    this->addChild(pTutor);
+    
     //1を表示
     showScene1();
     

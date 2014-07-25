@@ -16,6 +16,7 @@ USING_NS_CC;
 class TitleScene : public cocos2d::CCLayerColor
 {
 private:
+    bool fristTimeGame;
     
 protected:
     
@@ -24,6 +25,7 @@ public:
     static cocos2d::CCScene* scene();
     CREATE_FUNC(TitleScene);
     virtual void menuStartCallback(CCObject* pSender);
+    virtual void menuTutorCallback(CCObject* pSender);
 };
 
 #endif /* defined(__Arrows__TitleScene__) */

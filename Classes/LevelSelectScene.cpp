@@ -30,16 +30,14 @@ bool LevelSelectScene::init()
     {
         return false;
     }
-    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
     
     //start button
     CCArray* pLevelArr = new CCArray;
     
-    
     for (int i=1; i <= 15; i++) {
         pLevelArr->addObject(createLevelImage(i));
     }
-    
+
     CCMenu* pMenu = CCMenu::createWithArray(pLevelArr);
     pMenu->setPosition(CCPointZero);
     pMenu->setTag(tagLevelSelectMenuDialog);
