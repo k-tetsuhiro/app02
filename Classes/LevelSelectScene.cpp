@@ -37,6 +37,7 @@ bool LevelSelectScene::init()
     bool tutorClear = userDefault->getBoolForKey(tutorialKey.c_str());
     if( ! tutorClear){
         userDefault->setBoolForKey(tutorialKey.c_str(), true);
+        userDefault->flush();
     }
 
     
