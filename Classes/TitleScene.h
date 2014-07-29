@@ -16,7 +16,7 @@ USING_NS_CC;
 class TitleScene : public cocos2d::CCLayerColor
 {
 private:
-    bool fristTimeGame;
+    bool firstTimeGame;
     
 protected:
     

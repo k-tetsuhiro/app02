@@ -31,6 +31,15 @@ bool LevelSelectScene::init()
         return false;
     }
     
+    CCUserDefault* userDefault = CCUserDefault::sharedUserDefault();
+    // is_tutorial
+    string tutorialKey = ConstCommon::getTutorialKey();
+    bool tutorClear = userDefault->getBoolForKey(tutorialKey.c_str());
+    if( ! tutorClear){
+        userDefault->setBoolForKey(tutorialKey.c_str(), true);
+    }
+
+    
     //start button
     CCArray* pLevelArr = new CCArray;
     
@@ -42,6 +51,14 @@ bool LevelSelectScene::init()
     pMenu->setPosition(CCPointZero);
     pMenu->setTag(tagLevelSelectMenuDialog);
     this->addChild(pMenu);
+    
+    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+
+    CCString* stageSelectStr = CCString::createWithFormat("STAGE SELECT");
+    CCLabelTTF* stageSelectLabel = CCLabelTTF::create(stageSelectStr->getCString(), "Copperplate", 70.0);
+    stageSelectLabel->setColor(ccc3(0, 0, 0));
+    stageSelectLabel->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.95));
+    this->addChild(stageSelectLabel);
     
     return true;
     
@@ -63,7 +80,6 @@ void LevelSelectScene::menuStartCallback(CCObject *pSender)
     
     
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-    
     
     CCMenuItemImage* startMenuBG = CCMenuItemImage::create("logo_Info2.png","logo_Info2.png");
     startMenuBG->setScale(0.7);
@@ -173,7 +189,7 @@ CCMenuItemImage* LevelSelectScene::createLevelImage(int level)
     pLevel->setScale( ((size.width * 0.585) / 3) / pLevel->getContentSize().width );
     pLevel->setPosition(ccp(
                             size.width * (((((level - 1) % 3) + 1) * 0.3) - 0.1),
-                            size.height * (0.9 - (((level - 1) / 3 ) * 0.15))
+                            size.height * (0.9 - (((level - 1) / 3 ) * 0.15)) - 70
                             ));
     
     

@@ -33,17 +33,10 @@ bool TitleScene::init()
         return false;
     }
     
-    //show game
-    CCUserDefault*  userDefault = CCUserDefault::sharedUserDefault();
-    string totalAllGameCountKey = ConstCommon::getTotalAllGameCountKey();
-    int totalAllGameCount = userDefault->getFloatForKey(totalAllGameCountKey.c_str(),0);
-    
     //一回もクリアしたことなければチュートリアル表示
-    if(totalAllGameCount <= 1){
-        this->fristTimeGame = true;
-    }else{
-        this->fristTimeGame = false;
-    }
+     CCUserDefault*  userDefault = CCUserDefault::sharedUserDefault();
+    string tutorialKey = ConstCommon::getTutorialKey();
+    this->firstTimeGame = ! userDefault->getBoolForKey(tutorialKey.c_str());
 
     
     CCSize size = CCDirector::sharedDirector()->getWinSize();
@@ -116,7 +109,7 @@ bool TitleScene::init()
     this->addChild(pMenu);
     
     
-    if(! this->fristTimeGame){
+    if(! this->firstTimeGame){
         //チュートリアルを再度受けられるようにボタン生成
         //start button
         CCMenuItemImage* pTutorItem;
@@ -149,7 +142,7 @@ void TitleScene::menuStartCallback(CCObject *pSender)
     
     CCScene* scene;
     //一回もクリアしたことなければチュートリアル表示
-    if(this->fristTimeGame){
+    if(this->firstTimeGame){
         scene = Tutorial::scene();
     }else{
         scene = LevelSelectScene ::scene();
