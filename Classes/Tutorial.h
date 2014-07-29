@@ -17,9 +17,11 @@ using namespace std;
 class Tutorial : public cocos2d::CCLayerColor
 {
 private:
+    CCMenu* pMenuPurpose;
     CCMenu* pMenuScene1;
     CCMenu* pMenuScene2;
     
+    void showPurpose();
     void showScene1();
     void doScene1();
     void endScene1();
@@ -28,9 +30,12 @@ private:
     void endScene2();
     void endTutorial();
     
-    const static int TAG_SCENE_1_ITEM_1 = 101;
-    const static int TAG_SCENE_2_ITEM_1 = 201;
+    void visibleNextButton(CCObject *pObject);
     
+    const static int TAG_SCENE_1_ITEM_1 = 101;
+    const static int TAG_SCENE_1_ITEM_3 = 103;
+    const static int TAG_SCENE_2_ITEM_1 = 201;
+    const static int TAG_SCENE_2_ITEM_5 = 205;
     
 public:
     virtual bool init();
