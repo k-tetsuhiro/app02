@@ -20,6 +20,7 @@ public:
     static const int DEFAULT_HIGH_SCORE_NUM = 99;
     static string getHighScoreKey(int level);
     static string getTotalAllGameCountKey();
+    static string getTutorialKey();
 
 };
 

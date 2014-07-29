@@ -331,6 +331,7 @@ void MainGameScene::endJudgemnet()
     //ゲーム回数を記録
     int totalAllGameCount = userDefault->getFloatForKey(totalAllGameCountKey.c_str(),0);
     userDefault->setFloatForKey(totalAllGameCountKey.c_str(), totalAllGameCount+1);
+    userDefault->flush();
     
     
     

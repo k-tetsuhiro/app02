@@ -31,6 +31,15 @@ bool LevelSelectScene::init()
         return false;
     }
     
+    CCUserDefault* userDefault = CCUserDefault::sharedUserDefault();
+    // is_tutorial
+    string tutorialKey = ConstCommon::getTutorialKey();
+    bool tutorClear = userDefault->getBoolForKey(tutorialKey.c_str());
+    if( ! tutorClear){
+        userDefault->setBoolForKey(tutorialKey.c_str(), true);
+    }
+
+    
     //start button
     CCArray* pLevelArr = new CCArray;
     

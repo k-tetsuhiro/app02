@@ -24,3 +24,9 @@ string ConstCommon::getTotalAllGameCountKey()
     CCString* highScoreKey = CCString::createWithFormat("totalGameCount");
     return highScoreKey->getCString();
 }
+
+string ConstCommon::getTutorialKey()
+{
+    CCString* key = CCString::createWithFormat("isTutorial");
+    return key->getCString();
+}
