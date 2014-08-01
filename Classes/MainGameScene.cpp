@@ -15,6 +15,7 @@
 #include "ConstCommon.h"
 #include "GameData.h"
 #include "Animation.h"
+#include "NKLocalizedString.h"
 
 USING_NS_CC;
 using namespace std;
@@ -533,7 +534,8 @@ void MainGameScene::makeResumeDaialog()
     
     CCSize pResumeBGSize = resumeBG->getContentSize();
     CCLabelTTF* resumeLabel;
-    resumeLabel = CCLabelTTF::create("RESUME", "Copperplate", 60.0);
+    
+    resumeLabel = CCLabelTTF::create(NKLocalizedString::LocalizedString("resume", "RESUME"), "Copperplate", 60.0);
     resumeLabel->setColor(ccc3(0, 0, 0));
     resumeLabel->setPosition(ccp(pResumeBGSize.width * 0.5 ,pResumeBGSize.height * 0.7));
     resumeBG->addChild(resumeLabel);

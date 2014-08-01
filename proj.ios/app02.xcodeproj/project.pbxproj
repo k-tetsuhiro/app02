@@ -254,6 +254,8 @@
 		9D523A2A195838420064DC61 /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D523A09195838420064DC61 /* reload.png */; };
 		9D523A2B195838420064DC61 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D523A0A195838420064DC61 /* star.png */; };
 		9D523A2C195838420064DC61 /* touch_waku.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D523A0B195838420064DC61 /* touch_waku.png */; };
+		9D76243C198B8D48001DC72F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D76243E198B8D48001DC72F /* Localizable.strings */; };
+		9D762442198BA4B5001DC72F /* NKLocalizedString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D762440198BA4B5001DC72F /* NKLocalizedString.cpp */; };
 		9DB46BF01973ECAD00D4C287 /* level_circle_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB46BEB1973ECAD00D4C287 /* level_circle_1.png */; };
 		9DB46BF11973ECAD00D4C287 /* level_circle_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB46BEC1973ECAD00D4C287 /* level_circle_2.png */; };
 		9DB46BF21973ECAD00D4C287 /* level_circle_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB46BED1973ECAD00D4C287 /* level_circle_3.png */; };
@@ -827,6 +829,10 @@
 		9D523A09195838420064DC61 /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload.png; sourceTree = "<group>"; };
 		9D523A0A195838420064DC61 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		9D523A0B195838420064DC61 /* touch_waku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touch_waku.png; sourceTree = "<group>"; };
+		9D76243D198B8D48001DC72F /* ja */ = {isa = PBXFileReference; explicitFileType = text; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9D76243F198B8D4E001DC72F /* en */ = {isa = PBXFileReference; explicitFileType = text; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9D762440198BA4B5001DC72F /* NKLocalizedString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NKLocalizedString.cpp; path = ../Classes/NKLocalizedString.cpp; sourceTree = "<group>"; };
+		9D762441198BA4B5001DC72F /* NKLocalizedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NKLocalizedString.h; path = ../Classes/NKLocalizedString.h; sourceTree = "<group>"; };
 		9DB46BEB1973ECAD00D4C287 /* level_circle_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level_circle_1.png; sourceTree = "<group>"; };
 		9DB46BEC1973ECAD00D4C287 /* level_circle_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level_circle_2.png; sourceTree = "<group>"; };
 		9DB46BED1973ECAD00D4C287 /* level_circle_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level_circle_3.png; sourceTree = "<group>"; };
@@ -1467,6 +1473,8 @@
 				9D2A4CC919754BE100BC5457 /* Animation.h */,
 				9D2A4CCB19754C1D00BC5457 /* Tutorial.cpp */,
 				9D2A4CCC19754C1D00BC5457 /* Tutorial.h */,
+				9D762440198BA4B5001DC72F /* NKLocalizedString.cpp */,
+				9D762441198BA4B5001DC72F /* NKLocalizedString.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -1996,6 +2004,7 @@
 				D4EF949F15BD2D9800D803EB /* Icon-144.png */,
 				D4EF949915BD2D8B00D803EB /* Icon-57.png */,
 				D4EF949D15BD2D9600D803EB /* Icon-72.png */,
+				9D76243E198B8D48001DC72F /* Localizable.strings */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -2100,6 +2109,7 @@
 				Japanese,
 				French,
 				German,
+				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -2186,6 +2196,7 @@
 				9DFB425019780FB3001A3487 /* Icon-120.png in Resources */,
 				9DDBD591196EAA430033CB59 /* Lv13.json in Resources */,
 				9D523A13195838420064DC61 /* arial.ttf in Resources */,
+				9D76243C198B8D48001DC72F /* Localizable.strings in Resources */,
 				9D523A2A195838420064DC61 /* reload.png in Resources */,
 				9DE018D91986792300A223EB /* tutor_pre.png in Resources */,
 				9DB46BF61973F42600D4C287 /* logo_Info2.png in Resources */,
@@ -2360,6 +2371,7 @@
 				1A8F3B76175E05DA00049216 /* BoneData.cpp in Sources */,
 				1A8F3B77175E05DA00049216 /* CCSkeleton.cpp in Sources */,
 				1A8F3B78175E05DA00049216 /* CCSkeletonAnimation.cpp in Sources */,
+				9D762442198BA4B5001DC72F /* NKLocalizedString.cpp in Sources */,
 				375BD5121868454E0024609E /* CCActionNode.cpp in Sources */,
 				1A8F3B79175E05DA00049216 /* extension.cpp in Sources */,
 				1A8F3B7A175E05DA00049216 /* Json.cpp in Sources */,
@@ -2438,6 +2450,18 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		9D76243E198B8D48001DC72F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D76243D198B8D48001DC72F /* ja */,
+				9D76243F198B8D4E001DC72F /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2489,7 +2513,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "armv6 armv7 i386";
 			};
@@ -2542,7 +2566,7 @@
 				PROVISIONING_PROFILE = "7E0334D3-D649-4A70-B17E-387071730F5D";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7E0334D3-D649-4A70-B17E-387071730F5D";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv6 armv7 i386";

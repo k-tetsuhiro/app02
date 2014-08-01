@@ -1,0 +1,9 @@
+/* English settings */
+"touch" = "TOUCH";
+"tutor_scene1_explain" = "You got it!\nIf you touch an arrow\nIt is rotate and change color";
+"center_touch" = "CENTER\nTOUCH";
+"tutor_scene2_explain" = "Great!\nChange the color\nin an arrow direction";
+"purpose" = "PURPOSE";
+"tutor_purpose_explain1" = "This game is very simply";
+"tutor_purpose_explain2" = "Goal is to make all YELLOW";
+"resume" =  "RESUME"
