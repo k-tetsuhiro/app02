@@ -43,8 +43,9 @@ bool LevelSelectScene::init()
     
     //start button
     CCArray* pLevelArr = new CCArray;
-    
+
     for (int i=1; i <= 15; i++) {
+        //create Level Button
         pLevelArr->addObject(createLevelImage(i));
     }
 
@@ -95,20 +96,9 @@ void LevelSelectScene::menuStartCallback(CCObject *pSender)
     levelLabel->setColor(ccc3(0, 0, 0));
     levelLabel->setPosition(ccp(pStartBGSize.width * 0.5 ,pStartBGSize.height * 0.75));
     startMenuBG->addChild(levelLabel);
-    
-    //最小手数
-    CCString* jsonFileName = CCString::createWithFormat("Lv%d.json",m_level);
-    GameData* gm = new GameData(jsonFileName->getCString());
-    int minScore = gm->getMinScore();
-    
-    //ハイスコアを表示    
-    highScoreKey = ConstCommon::getHighScoreKey(m_level);
-    
-    CCUserDefault* userDefault = CCUserDefault::sharedUserDefault();
-   
-    
-    int bestScore = userDefault->getFloatForKey(highScoreKey.c_str(),99);
-    CCString* bestStr = CCString::createWithFormat("MIN:%d  BEST:%d",minScore,bestScore);
+
+    //ハイスコアを表示
+    CCString* bestStr = CCString::createWithFormat("MIN:%d  BEST:%d",min_score[m_level-1],best_score[m_level-1]);
     CCLabelTTF* bestLabel;
     bestLabel = CCLabelTTF::create(bestStr->getCString(), "Copperplate", 60.0);
     bestLabel->setColor(ccc3(0, 0, 0));
@@ -181,6 +171,28 @@ CCMenuItemImage* LevelSelectScene::createLevelImage(int level)
     CCSize size = CCDirector::sharedDirector()->getWinSize();
     CCString* levelString = CCString::createWithFormat("%d",level);
     
+    
+    //bestScoreも初期化
+    CCUserDefault* userDefault = CCUserDefault::sharedUserDefault();
+    highScoreKey = ConstCommon::getHighScoreKey(level);
+    best_score[level-1] = userDefault->getFloatForKey(highScoreKey.c_str(),99);
+    
+    //minScoreも初期化
+    CCString* jsonFileName = CCString::createWithFormat("Lv%d.json",level);
+    GameData* gm = new GameData(jsonFileName->getCString());
+    min_score[level-1] = gm->getMinScore();
+    
+    int rank;
+    
+    if(min_score[level-1] >= best_score[level-1]){
+        rank = 3;
+    }else if( min_score[level-1] <= best_score[level-1] + 8){
+        rank = 2;
+    }else{
+        rank = 1;
+    }
+    
+    
     int fileNum = ((level - 1) / 3) + 1;
     CCString* filePathName = CCString::createWithFormat("level_circle_%d.png",fileNum);
 
@@ -193,12 +205,31 @@ CCMenuItemImage* LevelSelectScene::createLevelImage(int level)
                             size.height * (0.9 - (((level - 1) / 3 ) * 0.15)) - 70
                             ));
     
+    CCSize pLevelSize = pLevel->getContentSize();
+    
+    if(best_score[level-1] != 99){
+        for (int i=0; i < rank; i++) {
+            CCSprite* pStar = CCSprite::create("level_star.png");
+            
+            if(i == 0){
+                pStar->setPosition(ccp(pLevelSize.width * 0.5 - pStar->getContentSize().width, pLevelSize.height * 0.75));
+            }else if(i == 1){
+                pStar->setPosition(ccp(pLevelSize.width * 0.5, pLevelSize.height * 0.75));
+            }else{
+                pStar->setPosition(ccp(pLevelSize.width * 0.5 + pStar->getContentSize().width, pLevelSize.height * 0.75));
+            }
+           
+            pLevel->addChild(pStar);
+        }
+
+    }
+
+    
     
     CCLabelTTF* levelLabel;
     levelLabel = CCLabelTTF::create(levelString->getCString(), "Arial", 150.0);
     levelLabel->setColor(ccc3(0x00,0x00,0x00));
     
-    CCSize pLevelSize = pLevel->getContentSize();
     levelLabel->setPosition(ccp(pLevelSize.width / 2 ,pLevelSize.height / 2));
     pLevel->addChild(levelLabel);
     

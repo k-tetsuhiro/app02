@@ -1,9 +1,9 @@
 /* 日本語設定ファイル */
 "touch" = "タッチしてみよう!";
-"tutor_scene1_explain" = "GOOD！\n矢印はタッチすると\n回転して色が変わります";
+"tutor_scene1_explain" = "GOOD！\n矢印はタッチすると\n回転して【黄色】に変わります";
 "center_touch" = "真ん中の矢印を\nタッチしてみよう!";
-"tutor_scene2_explain" = "GREAT！\n矢印が向いている先も\n色が変わります";
+"tutor_scene2_explain" = "GREAT！\n矢印が回転した後\n矢印の先も【黄色】に変わります";
 "purpose" =  "クリア条件"
-"tutor_purpose_explain1" = "このゲームは簡単です";
+"tutor_purpose_explain1" = "このゲームのクリア条件は";
 "tutor_purpose_explain2" = "全てが黄色になればクリアです！";
 "resume" =  "PAUSE"

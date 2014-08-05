@@ -86,7 +86,7 @@ bool ResultScene::initWithParam(int level, int minScore, int resultScore)
     
     if(minScore >= resultScore){
         rank = 3;
-    }else if( minScore >= resultScore + 8){
+    }else if( minScore <= resultScore + 8){
         rank = 2;
     }else{
         rank = 1;
