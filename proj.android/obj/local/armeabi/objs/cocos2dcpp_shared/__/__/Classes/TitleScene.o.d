@@ -204,7 +204,8 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/TitleScene.o: \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/support/component/CCComponent.h \
  /Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/proj.android/../../../cocos2dx/support/component/CCComponentContainer.h \
  jni/../../Classes/LevelSelectScene.h jni/../../Classes/ConstCommon.h \
- jni/../../Classes/Animation.h jni/../../Classes/Tutorial.h
+ jni/../../Classes/Animation.h jni/../../Classes/Tutorial.h \
+ jni/../../Classes/NativeCodeLauncher.h
 
 jni/../../Classes/TitleScene.h:
 
@@ -621,3 +622,5 @@ jni/../../Classes/ConstCommon.h:
 jni/../../Classes/Animation.h:
 
 jni/../../Classes/Tutorial.h:
+
+jni/../../Classes/NativeCodeLauncher.h:

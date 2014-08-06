@@ -6,12 +6,15 @@
 //
 //
 #include "NativeCodeLauncher.h"
+#include "cocos2d.h"
+
+USING_NS_CC;
 
 // Androidでは実装しない
 namespace Cocos2dExt {
     void NativeCodeLauncher::loginGameCenter()
     {
-        
+
     }
     void NativeCodeLauncher::openRanking()
     {

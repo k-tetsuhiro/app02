@@ -34,6 +34,9 @@ bool TitleScene::init()
         return false;
     }
     
+    //GameCenterにログイン
+    Cocos2dExt::NativeCodeLauncher::loginGameCenter();
+    
     //一回もクリアしたことなければチュートリアル表示
      CCUserDefault*  userDefault = CCUserDefault::sharedUserDefault();
     string tutorialKey = ConstCommon::getTutorialKey();
@@ -127,18 +130,21 @@ bool TitleScene::init()
         pMenu->addChild(pTutorItem);
         
         //ランキングのボタン生成
-        CCMenuItemImage* pRankingItem;
-        pRankingItem = CCMenuItemImage::create("button2.png", "button2.png",this,menu_selector(TitleScene::menuRankingCallback));
-        pRankingItem->setPosition(ccp(size.width * 0.5, size.height * 0.5));
-        pRankingItem->setScale((size.width * 0.4) / pRankingItem->getContentSize().width);
-        
-        CCLabelTTF* rankingLabel;
-        rankingLabel = CCLabelTTF::create("RANKING", "Arial", 30.0);
-        
-        CCSize pRankingItemSize = pRankingItem->getContentSize();
-        rankingLabel->setPosition(ccp(pRankingItemSize.width / 2 ,pRankingItemSize.height / 2));
-        pRankingItem->addChild(rankingLabel);
-        pMenu->addChild(pRankingItem);
+        if(CC_TARGET_PLATFORM == CC_PLATFORM_IOS){
+            CCMenuItemImage* pRankingItem;
+            pRankingItem = CCMenuItemImage::create("button2.png", "button2.png",this,menu_selector(TitleScene::menuRankingCallback));
+            pRankingItem->setPosition(ccp(size.width * 0.5, size.height * 0.5));
+            pRankingItem->setScale((size.width * 0.4) / pRankingItem->getContentSize().width);
+            
+            CCLabelTTF* rankingLabel;
+            rankingLabel = CCLabelTTF::create("ARCHIVE", "Arial", 30.0);
+            
+            CCSize pRankingItemSize = pRankingItem->getContentSize();
+            rankingLabel->setPosition(ccp(pRankingItemSize.width / 2 ,pRankingItemSize.height / 2));
+            pRankingItem->addChild(rankingLabel);
+            pMenu->addChild(pRankingItem);
+
+        }
 
     }
     
@@ -173,7 +179,6 @@ void TitleScene::menuTutorCallback(CCObject *pSender)
 
 void TitleScene::menuRankingCallback(CCObject *pSender)
 {
-    Cocos2dExt::NativeCodeLauncher::loginGameCenter();
     Cocos2dExt::NativeCodeLauncher::openAchievement();
 }
 
