@@ -26,6 +26,7 @@ public:
     CREATE_FUNC(TitleScene);
     virtual void menuStartCallback(CCObject* pSender);
     virtual void menuTutorCallback(CCObject* pSender);
+    virtual void menuRankingCallback(CCObject* pSender);
 };
 
 #endif /* defined(__Arrows__TitleScene__) */

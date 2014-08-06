@@ -223,6 +223,7 @@
 		46513EB1187BFBA200B5ABE1 /* UITouchGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46513EAF187BFBA200B5ABE1 /* UITouchGroup.cpp */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
 		9D08D347198137210029328F /* logo_tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D08D346198137210029328F /* logo_tutorial.png */; };
+		9D22AADB1992282D00445F5A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D22AADA1992282D00445F5A /* GameKit.framework */; };
 		9D2A4CC21975433500BC5457 /* clear_A.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2A4CBD1975433500BC5457 /* clear_A.png */; };
 		9D2A4CC31975433500BC5457 /* clear_C.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2A4CBE1975433500BC5457 /* clear_C.png */; };
 		9D2A4CC41975433500BC5457 /* clear_E.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2A4CBF1975433500BC5457 /* clear_E.png */; };
@@ -230,6 +231,8 @@
 		9D2A4CC61975433500BC5457 /* clear_R.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2A4CC11975433500BC5457 /* clear_R.png */; };
 		9D2A4CCA19754BE100BC5457 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D2A4CC819754BE100BC5457 /* Animation.cpp */; };
 		9D2A4CCD19754C1D00BC5457 /* Tutorial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D2A4CCB19754C1D00BC5457 /* Tutorial.cpp */; };
+		9D2FD8A41991E284000CAB69 /* NativeCodeLauncher_objc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2FD8A11991E284000CAB69 /* NativeCodeLauncher_objc.m */; };
+		9D2FD8A51991E284000CAB69 /* NativeCodeLauncher.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D2FD8A31991E284000CAB69 /* NativeCodeLauncher.mm */; };
 		9D3C33931976AFE800D4783E /* button3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C33921976AFE800D4783E /* button3.png */; };
 		9D5239E3195837E10064DC61 /* Arrow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D5239D5195837E10064DC61 /* Arrow.cpp */; };
 		9D5239E4195837E10064DC61 /* ConstCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D5239D7195837E10064DC61 /* ConstCommon.cpp */; };
@@ -790,6 +793,7 @@
 		46513EB0187BFBA200B5ABE1 /* UITouchGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITouchGroup.h; sourceTree = "<group>"; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		9D08D346198137210029328F /* logo_tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_tutorial.png; sourceTree = "<group>"; };
+		9D22AADA1992282D00445F5A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		9D2A4CBD1975433500BC5457 /* clear_A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear_A.png; sourceTree = "<group>"; };
 		9D2A4CBE1975433500BC5457 /* clear_C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear_C.png; sourceTree = "<group>"; };
 		9D2A4CBF1975433500BC5457 /* clear_E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear_E.png; sourceTree = "<group>"; };
@@ -799,6 +803,11 @@
 		9D2A4CC919754BE100BC5457 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Animation.h; path = ../Classes/Animation.h; sourceTree = "<group>"; };
 		9D2A4CCB19754C1D00BC5457 /* Tutorial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tutorial.cpp; path = ../Classes/Tutorial.cpp; sourceTree = "<group>"; };
 		9D2A4CCC19754C1D00BC5457 /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tutorial.h; path = ../Classes/Tutorial.h; sourceTree = "<group>"; };
+		9D2FD89D1991DF9C000CAB69 /* NativeCodeLauncher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NativeCodeLauncher.cpp; path = ../Classes/NativeCodeLauncher.cpp; sourceTree = "<group>"; };
+		9D2FD8A01991E284000CAB69 /* NativeCodeLauncher_objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeCodeLauncher_objc.h; sourceTree = SOURCE_ROOT; };
+		9D2FD8A11991E284000CAB69 /* NativeCodeLauncher_objc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeCodeLauncher_objc.m; sourceTree = SOURCE_ROOT; };
+		9D2FD8A31991E284000CAB69 /* NativeCodeLauncher.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeCodeLauncher.mm; sourceTree = SOURCE_ROOT; };
+		9D2FD8A61991E7EF000CAB69 /* NativeCodeLauncher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeCodeLauncher.h; sourceTree = "<group>"; };
 		9D3C33921976AFE800D4783E /* button3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button3.png; sourceTree = "<group>"; };
 		9D5239D5195837E10064DC61 /* Arrow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Arrow.cpp; sourceTree = "<group>"; };
 		9D5239D6195837E10064DC61 /* Arrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arrow.h; sourceTree = "<group>"; };
@@ -929,6 +938,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D22AADB1992282D00445F5A /* GameKit.framework in Frameworks */,
 				9DDC898D197FDC35002147DB /* ImageIO.framework in Frameworks */,
 				9DE4C47B1974063D00B16E90 /* SystemConfiguration.framework in Frameworks */,
 				D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */,
@@ -963,6 +973,9 @@
 		080E96DDFE201D6D7F000001 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				9D2FD8A01991E284000CAB69 /* NativeCodeLauncher_objc.h */,
+				9D2FD8A11991E284000CAB69 /* NativeCodeLauncher_objc.m */,
+				9D2FD8A31991E284000CAB69 /* NativeCodeLauncher.mm */,
 				1AC3624216D4A1E8000847F2 /* AppController.h */,
 				1AC3624316D4A1E8000847F2 /* AppController.mm */,
 				D4F9F37B12E54555005CA6D2 /* Info.plist */,
@@ -1477,6 +1490,8 @@
 				9D2A4CCC19754C1D00BC5457 /* Tutorial.h */,
 				9D762440198BA4B5001DC72F /* NKLocalizedString.cpp */,
 				9D762441198BA4B5001DC72F /* NKLocalizedString.h */,
+				9D2FD89D1991DF9C000CAB69 /* NativeCodeLauncher.cpp */,
+				9D2FD8A61991E7EF000CAB69 /* NativeCodeLauncher.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -1607,6 +1622,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D22AADA1992282D00445F5A /* GameKit.framework */,
 				9DDC898C197FDC35002147DB /* ImageIO.framework */,
 				9DDC898A197FDBA3002147DB /* iAd.framework */,
 				9DDC895E197FD126002147DB /* Security.framework */,
@@ -2096,7 +2112,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0510;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 42QBEAG94B;
@@ -2235,6 +2251,7 @@
 				15A3D9091682F7D5002FB0C5 /* b2EdgeShape.cpp in Sources */,
 				15A3D90A1682F7D5002FB0C5 /* b2PolygonShape.cpp in Sources */,
 				15A3D90B1682F7D5002FB0C5 /* b2BlockAllocator.cpp in Sources */,
+				9D2FD8A41991E284000CAB69 /* NativeCodeLauncher_objc.m in Sources */,
 				15A3D90C1682F7D5002FB0C5 /* b2Draw.cpp in Sources */,
 				375BD4C61868411B0024609E /* TriggerObj.cpp in Sources */,
 				375BD4C31868411B0024609E /* ObjectFactory.cpp in Sources */,
@@ -2429,6 +2446,7 @@
 				379BB9BE17F03F3700829B88 /* UIPageView.cpp in Sources */,
 				379BB9BF17F03F3700829B88 /* UIScrollView.cpp in Sources */,
 				379BB9C017F03F3700829B88 /* UIButton.cpp in Sources */,
+				9D2FD8A51991E284000CAB69 /* NativeCodeLauncher.mm in Sources */,
 				375BD50E1868454E0024609E /* CCActionEaseEx.cpp in Sources */,
 				379BB9C117F03F3700829B88 /* UICheckBox.cpp in Sources */,
 				379BB9C217F03F3700829B88 /* UIImageView.cpp in Sources */,
@@ -2471,7 +2489,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -2519,7 +2536,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7 arm64 i386 armv7s";
 			};
 			name = Debug;
 		};
@@ -2527,7 +2544,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Tetsuhiro Kakuno (42QBEAG94B)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tetsuhiro Kakuno (42QBEAG94B)";
 				COPY_PHASE_STRIP = YES;
@@ -2573,40 +2589,37 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7 arm64 i386 armv7s";
 			};
 			name = Release;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv6,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT) ";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 arm64 i386 armv7s";
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv6,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT) ";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 arm64 i386 armv7s";
 			};
 			name = Release;
 		};

@@ -12,6 +12,7 @@
 #include "ConstCommon.h"
 #include "Animation.h"
 #include "Tutorial.h"
+#include "NativeCodeLauncher.h"
 
 
 USING_NS_CC;
@@ -123,12 +124,21 @@ bool TitleScene::init()
         CCSize pTutorItemSize = pTutorItem->getContentSize();
         tutorLabel->setPosition(ccp(pTutorItemSize.width / 2 ,pTutorItemSize.height / 2));
         pTutorItem->addChild(tutorLabel);
+        pMenu->addChild(pTutorItem);
         
+        //ランキングのボタン生成
+        CCMenuItemImage* pRankingItem;
+        pRankingItem = CCMenuItemImage::create("button2.png", "button2.png",this,menu_selector(TitleScene::menuRankingCallback));
+        pRankingItem->setPosition(ccp(size.width * 0.5, size.height * 0.5));
+        pRankingItem->setScale((size.width * 0.4) / pRankingItem->getContentSize().width);
         
+        CCLabelTTF* rankingLabel;
+        rankingLabel = CCLabelTTF::create("RANKING", "Arial", 30.0);
         
-        CCMenu* pMenu2 = CCMenu::create(pTutorItem,NULL);
-        pMenu2->setPosition(CCPointZero);
-        this->addChild(pMenu2);
+        CCSize pRankingItemSize = pRankingItem->getContentSize();
+        rankingLabel->setPosition(ccp(pRankingItemSize.width / 2 ,pRankingItemSize.height / 2));
+        pRankingItem->addChild(rankingLabel);
+        pMenu->addChild(pRankingItem);
 
     }
     
@@ -159,5 +169,11 @@ void TitleScene::menuTutorCallback(CCObject *pSender)
     scene = Tutorial::scene();
     CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
     CCDirector::sharedDirector()->replaceScene(tran);
+}
+
+void TitleScene::menuRankingCallback(CCObject *pSender)
+{
+    Cocos2dExt::NativeCodeLauncher::loginGameCenter();
+    Cocos2dExt::NativeCodeLauncher::openAchievement();
 }
 

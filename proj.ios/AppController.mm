@@ -3,6 +3,7 @@
 #import "cocos2d.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "NativeCodeLauncher_objc.h"
 
 @implementation AppController
 
