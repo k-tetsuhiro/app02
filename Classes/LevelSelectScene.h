@@ -19,6 +19,8 @@ class LevelSelectScene : public cocos2d::CCLayerColor
 private:
     string highScoreKey;
     int m_level;
+    int best_score[25];
+    int min_score[25];
     void replayGame();
     void nextLevelGame();
     void startGame();

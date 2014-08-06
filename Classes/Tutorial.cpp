@@ -10,6 +10,8 @@
 #include "Arrow.h"
 #include "Animation.h"
 #include "LevelSelectScene.h"
+#include "NKLocalizedString.h"
+#include "NativeCodeLauncher.h"
 
 CCScene* Tutorial::scene(){
     CCScene* scene = CCScene::create();
@@ -59,7 +61,7 @@ void Tutorial::showPurpose(){
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
     
     //titleLabel
-    CCString* titleStr = CCString::createWithFormat("PURPOSE");
+    CCString* titleStr = CCString::create(NKLocalizedString::LocalizedString("purpose", "PURPOSE"));
     CCLabelTTF* titleLabel = CCLabelTTF::create(titleStr->getCString(), "Copperplate", 80.0);
     titleLabel->setColor(ccc3(0, 0, 0));
     CCMenuItem* pTitleItem = CCMenuItem::create();
@@ -112,7 +114,7 @@ void Tutorial::showPurpose(){
     pLoadItem3->addChild(pLoadImage3);
     
     //explainLabel
-    CCString* explainStr = CCString::createWithFormat("This game is very simply");
+    CCString* explainStr = CCString::create(NKLocalizedString::LocalizedString("tutor_purpose_explain1", "This game is very simply"));
     CCLabelTTF* explainLabel = CCLabelTTF::create(explainStr->getCString(), "Arial", 40.0);
     explainLabel->setColor(ccc3(0, 0, 0));
     explainLabel->setOpacity(0);
@@ -124,7 +126,7 @@ void Tutorial::showPurpose(){
     //explainLabel2
     CCCallFunc* funcEnd = CCCallFunc::create(this, callfunc_selector(Tutorial::visibleNextButton));
     
-    CCString* explainStr2 = CCString::createWithFormat("Goal is to make all YELLOW");
+    CCString* explainStr2 = CCString::create(NKLocalizedString::LocalizedString("tutor_purpose_explain2", "Goal is to make all YELLOW"));
     CCLabelTTF* explainLabel2 = CCLabelTTF::create(explainStr2->getCString(), "Arial", 40.0);
     explainLabel2->setColor(ccc3(0, 0, 0));
     explainLabel2->setOpacity(0);
@@ -159,7 +161,8 @@ void Tutorial::showScene1()
     pScene1Item2->setPosition(CCPointZero);
     
     CCLabelTTF* touchLabel;
-    touchLabel = CCLabelTTF::create("TOUCH", "Arial", 40.0);
+    
+    touchLabel = CCLabelTTF::create(NKLocalizedString::LocalizedString("touch", "TOUCH"), "Arial", 40.0);
     touchLabel->setColor(ccc3(0, 0, 0));
     touchLabel->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.5 - pScene1Item->getContentSize().height + 20));
     CCMenuItem* pScene1Item3 = CCMenuItem::create();
@@ -221,8 +224,8 @@ void Tutorial::endScene1()
     if(pScene1Item) {
         pScene1Item->setOpacity(0);
     }
-    
-    CCString* explainStr = CCString::createWithFormat("You got it!\nIf you touch an arrow\nIt is rotate and change color");
+    CCString* explainStr = CCString::create(NKLocalizedString::LocalizedString("tutor_scene1_explain", "You got it!\nIf you touch an arrow\nIt is rotate and change color"));
+    CCLOG("%s",explainStr->getCString());
     CCLabelTTF* explainLabel = CCLabelTTF::create(explainStr->getCString(), "Arial", 40.0);
     explainLabel->setColor(ccc3(0, 0, 0));
     
@@ -295,7 +298,7 @@ void Tutorial::showScene2()
     pScene1Item4->setPosition(ccp(winSize.width * 0.5 ,winSize.height * 0.8));
     
     CCLabelTTF* touchLabel;
-    touchLabel = CCLabelTTF::create("CENTER\nTOUCH", "Arial", 40.0);
+    touchLabel = CCLabelTTF::create(NKLocalizedString::LocalizedString("center_touch", "CENTER\nTOUCH"), "Arial", 40.0);
     touchLabel->setColor(ccc3(0, 0, 0));
     touchLabel->setPosition(ccp(winSize.width * 0.5, winSize.height * 0.25 ));
     CCMenuItem* pScene2Item5 = CCMenuItem::create();
@@ -369,8 +372,7 @@ void Tutorial::endScene2()
     if(pScene2Item) {
         pScene2Item->setOpacity(0);
     }
-    
-    CCString* explainStr = CCString::createWithFormat("Great!\nChange the color\nin an arrow direction");
+    CCString* explainStr = CCString::create(NKLocalizedString::LocalizedString("tutor_scene2_explain", "Great!\nChange the color\nin an arrow direction"));
     CCLabelTTF* explainLabel = CCLabelTTF::create(explainStr->getCString(), "Arial", 40.0);
     explainLabel->setColor(ccc3(0, 0, 0));
     
@@ -385,9 +387,12 @@ void Tutorial::endScene2()
 
 void Tutorial::endTutorial()
 {
-   CCScene* scene = LevelSelectScene ::scene();
-   CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
-   CCDirector::sharedDirector()->replaceScene(tran);
+    //チュートリアル達成
+    Cocos2dExt::NativeCodeLauncher::postAchievement(1, 100);
+    
+    CCScene* scene = LevelSelectScene ::scene();
+    CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
+    CCDirector::sharedDirector()->replaceScene(tran);
 }
 
 
