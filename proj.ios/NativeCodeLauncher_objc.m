@@ -131,7 +131,7 @@
                 
                 switch ([kind intValue]) {
                         case 1:
-                                idName = @"XXX";
+                                idName = @"com.renerd.app02.clearTutorial";
                                 break;
                         case 2:
                                 idName = @"YYY";

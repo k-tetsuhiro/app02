@@ -11,6 +11,7 @@
 #include "Animation.h"
 #include "LevelSelectScene.h"
 #include "NKLocalizedString.h"
+#include "NativeCodeLauncher.h"
 
 CCScene* Tutorial::scene(){
     CCScene* scene = CCScene::create();
@@ -386,9 +387,12 @@ void Tutorial::endScene2()
 
 void Tutorial::endTutorial()
 {
-   CCScene* scene = LevelSelectScene ::scene();
-   CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
-   CCDirector::sharedDirector()->replaceScene(tran);
+    //チュートリアル達成
+    Cocos2dExt::NativeCodeLauncher::postAchievement(1, 100);
+    
+    CCScene* scene = LevelSelectScene ::scene();
+    CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
+    CCDirector::sharedDirector()->replaceScene(tran);
 }
 
 
