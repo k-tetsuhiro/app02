@@ -132,7 +132,7 @@ bool TitleScene::init()
         //ランキングのボタン生成
         if(CC_TARGET_PLATFORM == CC_PLATFORM_IOS){
             CCMenuItemImage* pRankingItem;
-            pRankingItem = CCMenuItemImage::create("button2.png", "button2.png",this,menu_selector(TitleScene::menuRankingCallback));
+            pRankingItem = CCMenuItemImage::create("button3.png", "button3.png",this,menu_selector(TitleScene::menuRankingCallback));
             pRankingItem->setPosition(ccp(size.width * 0.5, size.height * 0.5));
             pRankingItem->setScale((size.width * 0.4) / pRankingItem->getContentSize().width);
             
