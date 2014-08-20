@@ -14,22 +14,46 @@
 
 USING_NS_CC;
 
-CCScene* LevelSelectScene::scene(){
+CCScene* LevelSelectScene::scene()
+{
+    return LevelSelectScene::sceneWithPage(1);
+}
+
+CCScene* LevelSelectScene::sceneWithPage(int pageNum)
+{
     CCScene* scene = CCScene::create();
-    LevelSelectScene* layer = LevelSelectScene::create();
+    LevelSelectScene* layer = LevelSelectScene::createWithPage(pageNum);
     scene->addChild(layer);
     
     return scene;
 }
 
-bool LevelSelectScene::init()
+LevelSelectScene* LevelSelectScene::createWithPage(int pageNum)
+{
+    LevelSelectScene *pRet = new LevelSelectScene();
+    if (pRet && pRet->initWithPage(pageNum))
+    {
+        pRet->autorelease();
+        return pRet;
+    }
+    else
+    {
+        delete pRet;
+        pRet = NULL;
+        return NULL;
+    }
+}
+
+
+bool LevelSelectScene::initWithPage(int pageNum)
 {
     // 初期化色を変更
-    //if (!CCLayerColor::initWithColor(ccc4(83, 166, 103, 255))) //RGBA
     if (!CCLayerColor::initWithColor(ccc4(0xF8,0xEC,0xDE,0xFF))) //RGBA
     {
         return false;
     }
+    
+    this->page_num = pageNum;
     
     CCUserDefault* userDefault = CCUserDefault::sharedUserDefault();
     // is_tutorial

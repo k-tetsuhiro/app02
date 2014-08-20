@@ -19,6 +19,7 @@ class LevelSelectScene : public cocos2d::CCLayerColor
 private:
     string highScoreKey;
     int m_level;
+    int page_num;
     int best_score[25];
     int min_score[25];
     void replayGame();
@@ -32,9 +33,11 @@ protected:
 public:
     const static int tagStartMenuDialog = 100;
     const static int tagLevelSelectMenuDialog = 200;
-    virtual bool init();
+    virtual bool initWithPage(int pageNum);
     static cocos2d::CCScene* scene();
-    CREATE_FUNC(LevelSelectScene);
+    static cocos2d::CCScene* sceneWithPage(int pageNum);
+    static LevelSelectScene* createWithPage(int pageNum);
+    //CREATE_FUNC(LevelSelectScene);
     virtual void menuStartCallback(CCObject* pSender);
 };
 

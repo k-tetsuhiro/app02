@@ -137,7 +137,7 @@ bool TitleScene::init()
             pRankingItem->setScale((size.width * 0.4) / pRankingItem->getContentSize().width);
             
             CCLabelTTF* rankingLabel;
-            rankingLabel = CCLabelTTF::create("ARCHIVE", "Arial", 30.0);
+            rankingLabel = CCLabelTTF::create("ACHIVEMENT", "Arial", 30.0);
             
             CCSize pRankingItemSize = pRankingItem->getContentSize();
             rankingLabel->setPosition(ccp(pRankingItemSize.width / 2 ,pRankingItemSize.height / 2));
