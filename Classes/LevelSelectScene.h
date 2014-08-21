@@ -25,6 +25,8 @@ private:
     void replayGame();
     void nextLevelGame();
     void startGame();
+    void showNextPage();
+    void showPrevPage();
     void hiddenStartMenu();
     CCMenuItemImage* createLevelImage(int level);
     
