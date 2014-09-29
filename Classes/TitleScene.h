@@ -17,6 +17,7 @@ class TitleScene : public cocos2d::CCLayerColor
 {
 private:
     bool firstTimeGame;
+    bool debugBoot;
     
 protected:
     
@@ -27,6 +28,7 @@ public:
     virtual void menuStartCallback(CCObject* pSender);
     virtual void menuTutorCallback(CCObject* pSender);
     virtual void menuRankingCallback(CCObject* pSender);
+    virtual void menuDebugBootCallback(CCObject* pSender);
 };
 
 #endif /* defined(__Arrows__TitleScene__) */

@@ -10,6 +10,7 @@
 #include "ConstCommon.h"
 #include "MainGameScene.h"
 #include "TitleScene.h"
+#include "NativeCodeLauncher.h"
 
 USING_NS_CC;
 using namespace std;
@@ -86,6 +87,9 @@ bool ResultScene::initWithParam(int level, int minScore, int resultScore)
     
     if(minScore >= resultScore){
         rank = 3;
+        
+        //Game　Center
+        Cocos2dExt::NativeCodeLauncher::postAchievement(level, 100);
     }else if( minScore <= resultScore + 8){
         rank = 2;
     }else{

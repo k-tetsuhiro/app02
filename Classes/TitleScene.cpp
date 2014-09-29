@@ -13,6 +13,7 @@
 #include "Animation.h"
 #include "Tutorial.h"
 #include "NativeCodeLauncher.h"
+#include "DebugBoot.h"
 
 
 USING_NS_CC;
@@ -27,6 +28,9 @@ CCScene* TitleScene::scene(){
 
 bool TitleScene::init()
 {
+    
+    //debug
+    this->debugBoot = true;
     
     // 初期化色を変更
     if (!CCLayerColor::initWithColor(ccc4(0xFF,0xEF,0xFF,0xFF))) //RGBA
@@ -148,6 +152,22 @@ bool TitleScene::init()
 
     }
     
+    //debug
+    if(this->debugBoot){
+        CCMenuItemImage* pDebugBootItem;
+        pDebugBootItem = CCMenuItemImage::create("button3.png", "button3.png",this,menu_selector(TitleScene::menuDebugBootCallback));
+        pDebugBootItem->setPosition(ccp(size.width * 0.5, size.height * 0.2));
+        pDebugBootItem->setScale((size.width * 0.4) / pDebugBootItem->getContentSize().width);
+        
+        CCLabelTTF* debugBootLabel;
+        debugBootLabel = CCLabelTTF::create("DEBUG BOOT", "Arial", 30.0);
+        
+        debugBootLabel->setPosition(ccp(pDebugBootItem->getContentSize().width / 2 ,pDebugBootItem->getContentSize().height / 2));
+        pDebugBootItem->addChild(debugBootLabel);
+        pMenu->addChild(pDebugBootItem);
+
+    }
+    
     return true;
     
 }
@@ -180,5 +200,14 @@ void TitleScene::menuTutorCallback(CCObject *pSender)
 void TitleScene::menuRankingCallback(CCObject *pSender)
 {
     Cocos2dExt::NativeCodeLauncher::openAchievement();
+}
+
+void TitleScene::menuDebugBootCallback(cocos2d::CCObject *pSender)
+{
+    
+    CCScene* scene;
+    scene = DebugBoot::scene();
+    CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);
+    CCDirector::sharedDirector()->replaceScene(tran);
 }
 

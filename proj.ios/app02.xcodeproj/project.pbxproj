@@ -282,6 +282,8 @@
 		9DB46BF41973ECAD00D4C287 /* level_circle_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB46BEF1973ECAD00D4C287 /* level_circle_5.png */; };
 		9DB46BF61973F42600D4C287 /* logo_Info2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB46BF51973F42600D4C287 /* logo_Info2.png */; };
 		9DBBB98719A618B300D28F7F /* prev.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DBBB98619A618B300D28F7F /* prev.png */; };
+		9DC80EA619B99BA500A0ABC1 /* DebugBoot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9DC80EA419B99BA500A0ABC1 /* DebugBoot.cpp */; };
+		9DC80EA819B99CDE00A0ABC1 /* debugGame.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DC80EA719B99CDE00A0ABC1 /* debugGame.json */; };
 		9DDBD57B196EA3AB0033CB59 /* Lv2.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBD578196EA3AB0033CB59 /* Lv2.json */; };
 		9DDBD57C196EA3AB0033CB59 /* Lv3.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBD579196EA3AB0033CB59 /* Lv3.json */; };
 		9DDBD57D196EA3AB0033CB59 /* Lv4.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBD57A196EA3AB0033CB59 /* Lv4.json */; };
@@ -882,6 +884,9 @@
 		9DB46BEF1973ECAD00D4C287 /* level_circle_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level_circle_5.png; sourceTree = "<group>"; };
 		9DB46BF51973F42600D4C287 /* logo_Info2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_Info2.png; sourceTree = "<group>"; };
 		9DBBB98619A618B300D28F7F /* prev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prev.png; sourceTree = "<group>"; };
+		9DC80EA419B99BA500A0ABC1 /* DebugBoot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DebugBoot.cpp; path = ../Classes/DebugBoot.cpp; sourceTree = "<group>"; };
+		9DC80EA519B99BA500A0ABC1 /* DebugBoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugBoot.h; path = ../Classes/DebugBoot.h; sourceTree = "<group>"; };
+		9DC80EA719B99CDE00A0ABC1 /* debugGame.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = debugGame.json; sourceTree = "<group>"; };
 		9DDBD578196EA3AB0033CB59 /* Lv2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Lv2.json; sourceTree = "<group>"; };
 		9DDBD579196EA3AB0033CB59 /* Lv3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Lv3.json; sourceTree = "<group>"; };
 		9DDBD57A196EA3AB0033CB59 /* Lv4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Lv4.json; sourceTree = "<group>"; };
@@ -1524,6 +1529,8 @@
 				9D762441198BA4B5001DC72F /* NKLocalizedString.h */,
 				9D2FD89D1991DF9C000CAB69 /* NativeCodeLauncher.cpp */,
 				9D2FD8A61991E7EF000CAB69 /* NativeCodeLauncher.h */,
+				9DC80EA419B99BA500A0ABC1 /* DebugBoot.cpp */,
+				9DC80EA519B99BA500A0ABC1 /* DebugBoot.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -1990,6 +1997,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9DC80EA719B99CDE00A0ABC1 /* debugGame.json */,
 				9DBBB98619A618B300D28F7F /* prev.png */,
 				9DEA5472196D67520021D950 /* Lv1.json */,
 				9DDBD578196EA3AB0033CB59 /* Lv2.json */,
@@ -2235,6 +2243,7 @@
 				9DFB425819780FB3001A3487 /* Icon.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				9D523A19195838420064DC61 /* logo_A.png in Resources */,
+				9DC80EA819B99CDE00A0ABC1 /* debugGame.json in Resources */,
 				9D3C33931976AFE800D4783E /* button3.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
@@ -2351,6 +2360,7 @@
 				15A3D9291682F7D5002FB0C5 /* b2WeldJoint.cpp in Sources */,
 				15A3D92A1682F7D5002FB0C5 /* b2WheelJoint.cpp in Sources */,
 				15A3D9391682F7D5002FB0C5 /* b2Rope.cpp in Sources */,
+				9DC80EA619B99BA500A0ABC1 /* DebugBoot.cpp in Sources */,
 				15A3D9951682F7F9002FB0C5 /* chipmunk.c in Sources */,
 				15A3D9971682F7F9002FB0C5 /* cpConstraint.c in Sources */,
 				15A3D9981682F7F9002FB0C5 /* cpDampedRotarySpring.c in Sources */,
@@ -2608,8 +2618,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tetsuhiro Kakuno (42QBEAG94B)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tetsuhiro Kakuno (42QBEAG94B)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2647,7 +2657,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = app02;
-				PROVISIONING_PROFILE = "7E0334D3-D649-4A70-B17E-387071730F5D";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7E0334D3-D649-4A70-B17E-387071730F5D";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

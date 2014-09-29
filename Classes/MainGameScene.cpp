@@ -116,10 +116,6 @@ void MainGameScene::makeArrows()
     CCString* jsonFileName = CCString::createWithFormat("Lv%d.json",m_level);
     GameData* gm = new GameData(jsonFileName->getCString());
     
-    //prefix Lv1_
-    stringstream ss;
-    ss << "lv" << m_level << "_";
-    
     //矢印の方向
     int *arrowDirection = gm->getDirectionArray();
     
