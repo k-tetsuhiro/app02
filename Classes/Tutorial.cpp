@@ -388,7 +388,7 @@ void Tutorial::endScene2()
 void Tutorial::endTutorial()
 {
     //チュートリアル達成
-    Cocos2dExt::NativeCodeLauncher::postAchievement(1, 100);
+    Cocos2dExt::NativeCodeLauncher::postAchievement(1000, 100);
     
     CCScene* scene = LevelSelectScene ::scene();
     CCTransitionFadeTR* tran = CCTransitionFadeTR::create(1, scene);

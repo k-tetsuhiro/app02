@@ -39,7 +39,7 @@ void GameData::makeData()
         }
 
     }else{
-        CCAssert(false, "json perse err");
+        //CCAssert(false, "json perse err");
     }
    
     

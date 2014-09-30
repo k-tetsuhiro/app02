@@ -81,6 +81,17 @@ void Arrow::rotateArrow()
     
 }
 
+void Arrow::reRotateArrow()
+{
+    
+    if(this->direction == 0){
+        this->direction = 3;
+    }else{
+        this->direction--;
+    }
+    
+}
+
 void Arrow::onTouchArrow()
 {
     rotateArrow();

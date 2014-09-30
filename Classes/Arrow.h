@@ -34,6 +34,7 @@ public:
     void onTouchArrow();
     void reverseArrow();
     void rotateArrow();
+    void reRotateArrow();
     bool getOnFlag();
     CCSprite* getArrowSprite();
     CCSprite* getArrowOnSprite();
