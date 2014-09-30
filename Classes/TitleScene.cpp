@@ -30,7 +30,7 @@ bool TitleScene::init()
 {
     
     //debug
-    this->debugBoot = true;
+    this->debugBoot = false;
     
     // 初期化色を変更
     if (!CCLayerColor::initWithColor(ccc4(0xFF,0xEF,0xFF,0xFF))) //RGBA

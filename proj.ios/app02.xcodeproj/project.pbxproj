@@ -314,6 +314,8 @@
 		9DE4C4821974070900B16E90 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE4C4811974070900B16E90 /* AdSupport.framework */; };
 		9DEA546E196D4DFA0021D950 /* GameData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA546C196D4DFA0021D950 /* GameData.cpp */; };
 		9DEA5473196D67520021D950 /* Lv1.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DEA5472196D67520021D950 /* Lv1.json */; };
+		9DF0876419D9742700CEF6C6 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF0876219D9742700CEF6C6 /* EventKit.framework */; };
+		9DF0876519D9742700CEF6C6 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF0876319D9742700CEF6C6 /* EventKitUI.framework */; };
 		9DFB42411977E313001A3487 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFB42401977E313001A3487 /* libGoogleAdMobAds.a */; };
 		9DFB42431977E484001A3487 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFB42421977E484001A3487 /* libcurl.a */; };
 		9DFB424F19780FB3001A3487 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB424419780FB3001A3487 /* Icon-76.png */; };
@@ -929,6 +931,8 @@
 		9DEA546D196D4DFA0021D950 /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameData.h; path = ../Classes/GameData.h; sourceTree = "<group>"; };
 		9DEA5471196D5B260021D950 /* picojson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = picojson.h; sourceTree = "<group>"; };
 		9DEA5472196D67520021D950 /* Lv1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Lv1.json; sourceTree = "<group>"; };
+		9DF0876219D9742700CEF6C6 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		9DF0876319D9742700CEF6C6 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		9DFB42341977E313001A3487 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADAdMobExtras.h; path = ../other/AdmobSDK/GADAdMobExtras.h; sourceTree = "<group>"; };
 		9DFB42351977E313001A3487 /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADAdNetworkExtras.h; path = ../other/AdmobSDK/GADAdNetworkExtras.h; sourceTree = "<group>"; };
 		9DFB42361977E313001A3487 /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADAdSize.h; path = ../other/AdmobSDK/GADAdSize.h; sourceTree = "<group>"; };
@@ -975,6 +979,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DF0876419D9742700CEF6C6 /* EventKit.framework in Frameworks */,
+				9DF0876519D9742700CEF6C6 /* EventKitUI.framework in Frameworks */,
 				9D22AADB1992282D00445F5A /* GameKit.framework in Frameworks */,
 				9DDC898D197FDC35002147DB /* ImageIO.framework in Frameworks */,
 				9DE4C47B1974063D00B16E90 /* SystemConfiguration.framework in Frameworks */,
@@ -1661,6 +1667,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9DF0876219D9742700CEF6C6 /* EventKit.framework */,
+				9DF0876319D9742700CEF6C6 /* EventKitUI.framework */,
 				9D22AADA1992282D00445F5A /* GameKit.framework */,
 				9DDC898C197FDC35002147DB /* ImageIO.framework */,
 				9DDC898A197FDBA3002147DB /* iAd.framework */,
@@ -2168,7 +2176,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 42QBEAG94B;
@@ -2563,6 +2571,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -2618,6 +2627,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;

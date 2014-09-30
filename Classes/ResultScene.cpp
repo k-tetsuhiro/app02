@@ -16,7 +16,7 @@ USING_NS_CC;
 using namespace std;
 
 //const
-int ResultScene::max_level = 15;
+int ResultScene::max_level = 30;
 
 
 CCScene* ResultScene::sceneWithParam(int level, int minScore, int resultScore)
