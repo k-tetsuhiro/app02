@@ -14,22 +14,48 @@
 
 USING_NS_CC;
 
-CCScene* LevelSelectScene::scene(){
+CCScene* LevelSelectScene::scene()
+{
+    return LevelSelectScene::sceneWithPage(1);
+}
+
+CCScene* LevelSelectScene::sceneWithPage(int pageNum)
+{
     CCScene* scene = CCScene::create();
-    LevelSelectScene* layer = LevelSelectScene::create();
+    LevelSelectScene* layer = LevelSelectScene::createWithPage(pageNum);
     scene->addChild(layer);
     
     return scene;
 }
 
-bool LevelSelectScene::init()
+LevelSelectScene* LevelSelectScene::createWithPage(int pageNum)
 {
+    LevelSelectScene *pRet = new LevelSelectScene();
+    if (pRet && pRet->initWithPage(pageNum))
+    {
+        pRet->autorelease();
+        return pRet;
+    }
+    else
+    {
+        delete pRet;
+        pRet = NULL;
+        return NULL;
+    }
+}
+
+
+bool LevelSelectScene::initWithPage(int pageNum)
+{
+     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+    
     // 初期化色を変更
-    //if (!CCLayerColor::initWithColor(ccc4(83, 166, 103, 255))) //RGBA
     if (!CCLayerColor::initWithColor(ccc4(0xF8,0xEC,0xDE,0xFF))) //RGBA
     {
         return false;
     }
+    
+    this->page_num = pageNum;
     
     CCUserDefault* userDefault = CCUserDefault::sharedUserDefault();
     // is_tutorial
@@ -43,8 +69,9 @@ bool LevelSelectScene::init()
     
     //start button
     CCArray* pLevelArr = new CCArray;
-
-    for (int i=1; i <= 15; i++) {
+    
+    //page1->1〜15 ... page2->16〜30
+    for (int i=1 + ((page_num - 1)* 15); i <= 15 + ((page_num - 1)* 15); i++) {
         //create Level Button
         pLevelArr->addObject(createLevelImage(i));
     }
@@ -52,9 +79,26 @@ bool LevelSelectScene::init()
     CCMenu* pMenu = CCMenu::createWithArray(pLevelArr);
     pMenu->setPosition(CCPointZero);
     pMenu->setTag(tagLevelSelectMenuDialog);
+    
+    if(this->page_num != 2){
+        CCMenuItemImage* nextItem = CCMenuItemImage::create("next.png","next.png.png" ,this, menu_selector(LevelSelectScene::showNextPage));
+        nextItem->setPosition(ccp(winSize.width * 0.8, winSize.height * 0.2));
+        nextItem->setScale(0.2);
+        pMenu->addChild(nextItem);
+    }
+    
+    if(this->page_num != 1){
+        CCMenuItemImage* prevItem = CCMenuItemImage::create("prev.png","prev.png" ,this, menu_selector(LevelSelectScene::showPrevPage));
+        prevItem->setPosition(ccp(winSize.width * 0.2, winSize.height * 0.2));
+        prevItem->setScale(0.2);
+        pMenu->addChild(prevItem);
+    }
+    
+   
+    
     this->addChild(pMenu);
     
-    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+   
 
     CCString* stageSelectStr = CCString::createWithFormat("STAGE SELECT");
     CCLabelTTF* stageSelectLabel = CCLabelTTF::create(stageSelectStr->getCString(), "Copperplate", 70.0);
@@ -194,15 +238,20 @@ CCMenuItemImage* LevelSelectScene::createLevelImage(int level)
     
     
     int fileNum = ((level - 1) / 3) + 1;
+    if(fileNum > 5){
+        fileNum = fileNum - (( fileNum / 5) * 5) + 1;
+    }
     CCString* filePathName = CCString::createWithFormat("level_circle_%d.png",fileNum);
 
     CCMenuItemImage* pLevel;
     pLevel = CCMenuItemImage::create(filePathName->getCString(), filePathName->getCString(),this,menu_selector(LevelSelectScene::menuStartCallback));
     pLevel->setScale(0.25);
     pLevel->setScale( ((size.width * 0.585) / 3) / pLevel->getContentSize().width );
+    
+    int posLevel = level - (15 * ((level - 1) / 15));
     pLevel->setPosition(ccp(
-                            size.width * (((((level - 1) % 3) + 1) * 0.3) - 0.1),
-                            size.height * (0.9 - (((level - 1) / 3 ) * 0.15)) - 70
+                            size.width * (((((posLevel - 1) % 3) + 1) * 0.3) - 0.1),
+                            size.height * (0.9 - (((posLevel - 1) / 3 ) * 0.128)) - 70
                             ));
     
     CCSize pLevelSize = pLevel->getContentSize();
@@ -236,5 +285,24 @@ CCMenuItemImage* LevelSelectScene::createLevelImage(int level)
     pLevel->setTag(level);
 
     return pLevel;
+}
+
+
+void LevelSelectScene::showNextPage()
+{
+    CCScene* scene = LevelSelectScene ::sceneWithPage(this->page_num + 1);
+    CCTransitionFlipX* tran = CCTransitionFlipX::create(1, scene, kCCTransitionOrientationLeftOver);
+    CCDirector::sharedDirector()->replaceScene(tran);
+    
+    
+}
+
+void LevelSelectScene::showPrevPage()
+{
+    CCScene* scene = LevelSelectScene ::sceneWithPage(this->page_num - 1);
+    CCTransitionFlipX* tran = CCTransitionFlipX::create(1, scene, kCCTransitionOrientationRightOver);
+    CCDirector::sharedDirector()->replaceScene(tran);
+    
+    
 }
 
