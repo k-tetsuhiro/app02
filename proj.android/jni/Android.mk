@@ -20,6 +20,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/Tutorial.cpp \
 				   ../../Classes/NKLocalizedString.cpp \
 				   ../../Classes/NativeCodeLauncher.cpp \
+				   ../../Classes/DebugBoot.cpp \
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
 
