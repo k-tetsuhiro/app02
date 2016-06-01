@@ -14,7 +14,7 @@
 		<string>https://github.com/k-tetsuhiro/app02.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>proj.ios/app02.xcodeproj/project.xcworkspace</string>
+	<string>proj.ios/app02.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>EC864C1D7627BDC4FEC4CE292064C910BABDE6E6</key>

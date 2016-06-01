@@ -14,7 +14,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "213"
-            endingLineNumber = "213">
+            endingLineNumber = "213"
+            landmarkName = "LevelSelectScene::createLevelImage(int level)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -102,6 +104,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "DebugBoot::init()"
                   moduleName = "app02"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/Classes/DebugBoot.cpp"
                   timestampString = "432718383.04284"
                   startingColumnNumber = "9223372036854775807"
@@ -116,6 +119,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "DebugBoot::create()"
                   moduleName = "app02"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/k_tetsuhiro/Documents/iPhoneDev/cocos2d-x-2.2.2/projects/app02/Classes/DebugBoot.cpp"
                   timestampString = "432718383.043241"
                   startingColumnNumber = "9223372036854775807"
